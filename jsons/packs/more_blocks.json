@@ -1,0 +1,33 @@
+{
+  "topic": "More Blocks",
+  "packs": [
+    {
+      "pack_id": "MoreTrapdoors",
+      "pack_name": "More Trapdoors",
+      "pack_description": "Creates 12 Trapdoors instead of 3.",
+      "conflict": [],
+      "compatibility": []
+    },
+    {
+      "pack_id": "MoreBark",
+      "pack_name": "More Bark",
+      "pack_description": "Creates 4 Bark instead of 3.",
+      "conflict": [],
+      "compatibility": []
+    },
+    {
+      "pack_id": "MoreStairs",
+      "pack_name": "More Stairs",
+      "pack_description": "Creates 8 Stairs instead of 4.",
+      "conflict": [],
+      "compatibility": []
+    },
+    {
+      "pack_id": "MoreBricks",
+      "pack_name": "More Bricks",
+      "pack_description": "Creates 4 Bricks instead of 1.",
+      "conflict": [],
+      "compatibility": []
+    }
+  ]
+}

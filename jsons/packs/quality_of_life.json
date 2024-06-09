@@ -1,0 +1,82 @@
+{
+  "topic": "Quality of Life",
+  "packs": [
+    {
+      "pack_id": "BacktoBlocks",
+      "pack_name": "Back to Blocks",
+      "pack_description": "Allows you to craft full blocks from stairs and slabs.",
+      "conflict": [],
+      "compatibility": []
+    },
+    {
+      "pack_id": "DoubleSlabs",
+      "pack_name": "Double Slabs",
+      "pack_description": "Allows you to craft 2 slabs from a single block.",
+      "conflict": [],
+      "compatibility": []
+    },
+    {
+      "pack_id": "DroppertoDispenser",
+      "pack_name": "Dropper to Dispenser",
+      "pack_description": "Allows you to convert a Dropper to a Dispenser using a Bow, or by using String and Sticks.",
+      "conflict": [],
+      "compatibility": []
+    },
+    {
+      "pack_id": "RottenFleshtoLeather",
+      "pack_name": "Rotten Flesh to Leather",
+      "pack_description": "Allows you to smelt Rotten Flesh into Leather.",
+      "conflict": [],
+      "compatibility": []
+    },
+    {
+      "pack_id": "CharcoaltoBlackDye",
+      "pack_name": "Charcoal to Black Dye",
+      "pack_description": "Allows you to craft Charcoal into Black Dye.",
+      "conflict": [],
+      "compatibility": []
+    },
+    {
+      "pack_id": "CoaltoBlackDye",
+      "pack_name": "Coal to Black Dye",
+      "pack_description": "Allows you to craft Coal into Black Dye.",
+      "conflict": [],
+      "compatibility": []
+    },
+    {
+      "pack_id": "SandstoneDyeing",
+      "pack_name": "Sandstone Dyeing",
+      "pack_description": "Allows you to craft Sandstone with Red Dye to get Red Sandstone.",
+      "conflict": [],
+      "compatibility": []
+    },
+    {
+      "pack_id": "UniversalDyeing",
+      "pack_name": "Universal Dyeing",
+      "pack_description": "Allows you to dye any dyeable block to another color, no matter what color it is (does not include Wool and Concrete).",
+      "conflict": [],
+      "compatibility": []
+    },
+    {
+      "pack_id": "StraighttoShapeless",
+      "pack_name": "Straight to Shapeless",
+      "pack_description": "Craft items such as Paper, Bread and Shulker Boxes directly in your 2x2.",
+      "conflict": [],
+      "compatibility": []
+    },
+    {
+      "pack_id": "BlackstoneCobblestone",
+      "pack_name": "Blackstone Cobblestone",
+      "pack_description": "Craft all items that require Cobblestone, using Blackstone.",
+      "conflict": [],
+      "compatibility": []
+    },
+    {
+      "pack_id": "PowdertoGlass",
+      "pack_name": "Powder to Glass",
+      "pack_description": "Smelt all colors of Concrete Powder into their respective Stained Glass color.",
+      "conflict": [],
+      "compatibility": []
+    }
+  ]
+}
