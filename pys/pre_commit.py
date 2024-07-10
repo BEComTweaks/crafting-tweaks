@@ -29,7 +29,7 @@ pack_end = '</div>'
 
 category_end = '</div></div>'
 with open(f"{cdir()}/credits.md","r") as credits:
-    html_end = f'<div class="download-container"><div class="file-download"><input type="text" id="fileNameInput" placeholder="Enter Pack name"></div><button class="download-selected-button" onclick="downloadSelectedTweaks()">Download Selected Tweaks</button><div id="loading-circle"></div></div>   </div><script src="crafting-tweak-page.js"></script></body><footer style="auto" class="footer-container"><div class="credits-footer">{str(markdown(credits.read()))}			<p><a href="https://github.com/BEComTweaks/Bedrock-Tweaks-Base">GitHub</a></p></div></footer></html>'
+    html_end = f'<div class="download-container"><div class="file-download"><input type="text" id="fileNameInput" placeholder="Enter Pack name"></div><button class="download-selected-button" onclick="downloadSelectedTweaks()">Download Selected Tweaks</button><div id="loading-circle"></div><div id="selected-tweaks" style="display: none;"></div></div></div><script src="crafting-tweak-page.js"></script></body><footer style="auto" class="footer-container"><div class="credits-footer">{str(markdown(credits.read()))}<p><a href="https://github.com/BEComTweaks/Bedrock-Tweaks-Base">GitHub</a></p></div></footer></html>'
 
 def pre_commit():
     stats = [0, 0]
