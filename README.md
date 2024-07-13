@@ -1,8 +1,8 @@
 <div align="center">
-# BedrockTweaks/behaviour-packs
+# BEComTweaks/crafting-tweaks
 
-![Commit Activity](https://img.shields.io/github/commit-activity/w/BedrockTweaks/crafting-tweaks?style=for-the-badge&label=Commits&color=purple)
-![GitHub repo size](https://img.shields.io/github/repo-size/BedrockTweaks/crafting-tweaks?style=for-the-badge&label=Size&color=pink)
+![Commit Activity](https://img.shields.io/github/commit-activity/w/BEComTweaks/crafting-tweaks?style=for-the-badge&label=Commits&color=purple)
+![GitHub repo size](https://img.shields.io/github/repo-size/BEComTweaks/crafting-tweaks?style=for-the-badge&label=Size&color=pink)
 <br>
 ![Completed Packs](https://img.shields.io/badge/Packs-26%2F26-blue?style=for-the-badge&color=blue)
 ![Completed Compatibilities for Packs](https://img.shields.io/badge/Compatibilities-0%2F0-cyan?style=for-the-badge&color=cyan)
@@ -20,7 +20,7 @@ A repo containing every single tweak **possible** ported from <a href="https://v
 How to clone:
 
 ```bash
-git clone https://github.com/BedrockTweaks/crafting-tweaks/
+git clone https://github.com/BEComTweaks/crafting-tweaks/
 cd crafting-tweaks/pys
 echo 0 | python3 folder_creator.py
 ```

@@ -26,10 +26,10 @@ html_comp = '<div class="comp-hover-text">Incompatible with: <incompatible></div
 pack_mid = '<div class="tweak-info"><input type="checkbox" id="tweaknumber" name="tweak" value="tweaknumber"><img src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/relloctopackicon"style="width:82px; height:82px;" alt="pack_name"><br><label for="tweak" class="tweak-title">pack_name</label><div class="tweak-description">pack_description</div></div>'
 html_conf = '<div class="conf-hover-text">Conflicts with: <conflicts></div>'
 pack_end = '</div>'
-
 category_end = '</div></div>'
+
 with open(f"{cdir()}/credits.md","r") as credits:
-    html_end = f'<div class="download-container"><div class="file-download"><input type="text" id="fileNameInput" placeholder="Enter Pack name"></div><button class="download-selected-button" onclick="downloadSelectedTweaks()">Download Selected Tweaks</button><div id="loading-circle"></div><div id="selected-tweaks" style="display: none;"></div></div></div><script src="crafting-tweak-page.js"></script></body><footer style="auto" class="footer-container"><div class="credits-footer">{str(markdown(credits.read()))}<p><a href="https://github.com/BEComTweaks/Bedrock-Tweaks-Base">GitHub</a></p></div></footer></html>'
+    html_end = f'</div><div class="download-container"><div class="file-download"><input type="text" id="fileNameInput" placeholder="Enter Pack name"></div><button class="download-selected-button" onclick="downloadSelectedTweaks()">Download Selected Tweaks</button><div id="loading-circle"></div><div id="selected-tweaks"><div class="tweak-list-pack">Select some packs and see them appear here!</div></div></div><script src="crafting-tweak-page.js"></script></body><footer style="auto" class="footer-container"><div class="credits-footer">{str(markdown(credits.read()))}<p><a href="https://github.com/BEComTweaks/crafting-tweaks">GitHub</a></p></div></footer></html>'
 
 def pre_commit():
     stats = [0, 0]
@@ -142,7 +142,7 @@ def pre_commit():
                 to_add_pack = to_add_pack.replace("pack_description", file["packs"][i]["pack_description"])
                 to_add_pack = to_add_pack.replace("tweaknumber", f"tweak{packs}")
                 to_add_pack = to_add_pack.replace("relloctopackicon", f'packs/{file["topic"].lower()}/{file["packs"][i]["pack_id"]}/pack_icon.png')
-                #to_add_pack = to_add_pack.replace("https://raw.githubusercontent.com/BEComTweaks/c/main/","../")
+                #to_add_pack = to_add_pack.replace("https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/","../")
                 html += to_add_pack
         html += category_end
     clrprint("Finished Counting!", clr="green")
