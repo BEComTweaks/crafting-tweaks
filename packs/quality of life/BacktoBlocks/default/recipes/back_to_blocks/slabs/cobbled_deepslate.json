@@ -4,13 +4,9 @@
     "description": {
       "identifier": "bt:cobbled_deepslate.from_slab"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
-    "pattern": [
-      "##"
-    ],
+    "pattern": ["##"],
     "key": {
       "#": {
         "item": "minecraft:cobbled_deepslate_slab"

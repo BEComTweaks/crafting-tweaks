@@ -4,15 +4,9 @@
     "description": {
       "identifier": "minecraft:crafting_table_cut_copper_stairs"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
-    "pattern": [
-      "A",
-      "AA",
-      "AAA"
-    ],
+    "pattern": ["A", "AA", "AAA"],
     "key": {
       "A": {
         "item": "minecraft:cut_copper"

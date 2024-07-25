@@ -4,15 +4,9 @@
     "description": {
       "identifier": "bt:horsearmorgold"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
-    "pattern": [
-      "  #",
-      "###",
-      "#_#"
-    ],
+    "pattern": ["  #", "###", "#_#"],
     "key": {
       "#": {
         "item": "minecraft:gold_ingot"

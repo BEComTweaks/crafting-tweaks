@@ -9,18 +9,12 @@
         "item": "minecraft:deepslate_bricks"
       }
     },
-    "pattern": [
-      "#  ",
-      "## ",
-      "###"
-    ],
+    "pattern": ["#  ", "## ", "###"],
     "priority": 0,
     "result": {
       "count": 8,
       "item": "minecraft:deepslate_brick_stairs"
     },
-    "tags": [
-      "crafting_table"
-    ]
+    "tags": ["crafting_table"]
   }
 }

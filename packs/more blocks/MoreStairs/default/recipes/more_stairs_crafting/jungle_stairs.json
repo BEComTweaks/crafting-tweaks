@@ -4,16 +4,10 @@
     "description": {
       "identifier": "minecraft:jungle_stairs"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
     "group": "wooden_stairs",
-    "pattern": [
-      "#  ",
-      "## ",
-      "###"
-    ],
+    "pattern": ["#  ", "## ", "###"],
     "key": {
       "#": {
         "item": "minecraft:planks",

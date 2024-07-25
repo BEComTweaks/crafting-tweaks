@@ -4,15 +4,10 @@
     "description": {
       "identifier": "minecraft:dark_oak_trapdoor"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
     "group": "wooden_trap_door",
-    "pattern": [
-      "###",
-      "###"
-    ],
+    "pattern": ["###", "###"],
     "key": {
       "#": {
         "item": "minecraft:planks",

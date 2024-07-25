@@ -4,14 +4,9 @@
     "description": {
       "identifier": "bt:blackstone_lever"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
-    "pattern": [
-      "/",
-      "B"
-    ],
+    "pattern": ["/", "B"],
     "key": {
       "/": {
         "item": "minecraft:stick"

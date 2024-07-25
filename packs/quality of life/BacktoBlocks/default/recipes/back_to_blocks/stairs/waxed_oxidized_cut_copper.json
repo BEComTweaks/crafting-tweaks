@@ -4,9 +4,7 @@
     "description": {
       "identifier": "bt:waxed_oxidized_cut_copper.from_stair"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
     "ingredients": [
       {

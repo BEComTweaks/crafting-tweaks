@@ -4,14 +4,9 @@
     "description": {
       "identifier": "bt:polished_blackstone.craftable"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
-    "pattern": [
-      "$#",
-      "#$"
-    ],
+    "pattern": ["$#", "#$"],
     "key": {
       "#": {
         "item": "minecraft:polished_basalt"

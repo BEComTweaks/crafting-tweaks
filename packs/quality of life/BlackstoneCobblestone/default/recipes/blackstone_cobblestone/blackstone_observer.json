@@ -4,15 +4,9 @@
     "description": {
       "identifier": "bt:blackstone_observer"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
-    "pattern": [
-      "###",
-      "RRQ",
-      "###"
-    ],
+    "pattern": ["###", "RRQ", "###"],
     "key": {
       "#": {
         "item": "minecraft:blackstone"

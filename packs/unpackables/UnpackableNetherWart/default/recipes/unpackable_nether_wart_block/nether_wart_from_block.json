@@ -4,9 +4,7 @@
     "description": {
       "identifier": "bt:nether_wart_from_block"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
     "ingredients": [
       {

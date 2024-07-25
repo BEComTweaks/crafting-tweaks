@@ -4,9 +4,7 @@
     "description": {
       "identifier": "bt:bread.straight_to_shapeless"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
     "ingredients": [
       {

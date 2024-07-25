@@ -4,14 +4,9 @@
     "description": {
       "identifier": "minecraft:brick_block"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
-    "pattern": [
-      "##",
-      "##"
-    ],
+    "pattern": ["##", "##"],
     "key": {
       "#": {
         "item": "minecraft:brick"

@@ -4,15 +4,10 @@
     "description": {
       "identifier": "minecraft:oak_wood_stripped"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
     "group": "wood",
-    "pattern": [
-      "##",
-      "##"
-    ],
+    "pattern": ["##", "##"],
     "key": {
       "#": {
         "item": "minecraft:stripped_oak_log"

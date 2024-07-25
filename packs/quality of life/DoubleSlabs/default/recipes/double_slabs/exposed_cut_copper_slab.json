@@ -4,9 +4,7 @@
     "description": {
       "identifier": "bt:exposed_cut_copper.to_2_slabs"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
     "ingredients": [
       {
