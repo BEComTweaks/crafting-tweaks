@@ -4,13 +4,9 @@
     "description": {
       "identifier": "bt:polished_deepslate.from_slab"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
-    "pattern": [
-      "##"
-    ],
+    "pattern": ["##"],
     "key": {
       "#": {
         "item": "minecraft:polished_deepslate_slab"

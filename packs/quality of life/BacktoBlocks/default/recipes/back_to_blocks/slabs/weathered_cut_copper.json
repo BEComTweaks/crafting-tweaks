@@ -4,13 +4,9 @@
     "description": {
       "identifier": "bt:weathered_cut_copper.from_slab"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
-    "pattern": [
-      "##"
-    ],
+    "pattern": ["##"],
     "key": {
       "#": {
         "item": "minecraft:weathered_cut_copper_slab",

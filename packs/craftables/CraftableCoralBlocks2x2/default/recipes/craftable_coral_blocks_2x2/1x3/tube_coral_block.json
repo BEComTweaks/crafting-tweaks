@@ -4,9 +4,7 @@
     "description": {
       "identifier": "bt:tube_coral_block_1x3"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "group": "coral_blocks",
     "priority": 0,
     "ingredients": [

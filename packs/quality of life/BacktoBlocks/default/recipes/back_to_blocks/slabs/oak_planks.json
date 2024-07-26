@@ -4,13 +4,9 @@
     "description": {
       "identifier": "bt:oak_planks.from_slab"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
-    "pattern": [
-      "##"
-    ],
+    "pattern": ["##"],
     "key": {
       "#": {
         "item": "minecraft:wooden_slab",

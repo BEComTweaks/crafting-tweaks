@@ -4,9 +4,7 @@
     "description": {
       "identifier": "bt:magma_block_to_magma_cream"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
     "ingredients": [
       {

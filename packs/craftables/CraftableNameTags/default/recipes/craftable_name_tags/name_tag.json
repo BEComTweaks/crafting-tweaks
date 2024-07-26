@@ -4,19 +4,13 @@
     "description": {
       "identifier": "bt:name_tag"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
     "result": {
       "item": "minecraft:name_tag",
       "count": 1
     },
-    "pattern": [
-      " IS",
-      " PI",
-      "P  "
-    ],
+    "pattern": [" IS", " PI", "P  "],
     "key": {
       "I": {
         "item": "minecraft:iron_ingot"

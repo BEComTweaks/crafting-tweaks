@@ -4,19 +4,13 @@
     "description": {
       "identifier": "bt:notch_apple"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
     "result": {
       "item": "minecraft:appleenchanted",
       "count": 1
     },
-    "pattern": [
-      "GGG",
-      "G#G",
-      "GGG"
-    ],
+    "pattern": ["GGG", "G#G", "GGG"],
     "key": {
       "G": {
         "item": "minecraft:gold_block"

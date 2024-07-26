@@ -4,13 +4,9 @@
     "description": {
       "identifier": "bt:quartz_block.from_slab"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
-    "pattern": [
-      "##"
-    ],
+    "pattern": ["##"],
     "key": {
       "#": {
         "item": "minecraft:stone_slab",

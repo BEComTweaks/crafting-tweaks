@@ -4,9 +4,7 @@
     "description": {
       "identifier": "bt:mossy_cobblestone.to_2_slabs"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
     "ingredients": [
       {

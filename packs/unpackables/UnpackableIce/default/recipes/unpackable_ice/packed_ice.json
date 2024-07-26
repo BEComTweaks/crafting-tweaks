@@ -4,9 +4,7 @@
     "description": {
       "identifier": "bt:packed_ice_from_blue_ice"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 1,
     "ingredients": [
       {

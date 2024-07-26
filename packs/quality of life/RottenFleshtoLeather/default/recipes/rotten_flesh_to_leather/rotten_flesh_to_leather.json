@@ -4,12 +4,7 @@
     "description": {
       "identifier": "bt:rotten_flesh_to_leather"
     },
-    "tags": [
-      "furnace",
-      "smoker",
-      "campfire",
-      "soul_campfire"
-    ],
+    "tags": ["furnace", "smoker", "campfire", "soul_campfire"],
     "input": "minecraft:rotten_flesh",
     "output": "minecraft:leather"
   }

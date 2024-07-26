@@ -4,9 +4,7 @@
     "description": {
       "identifier": "bt:pink.powder_to_glass"
     },
-    "tags": [
-      "furnace"
-    ],
+    "tags": ["furnace"],
     "input": {
       "item": "minecraft:concrete_powder",
       "data": 6

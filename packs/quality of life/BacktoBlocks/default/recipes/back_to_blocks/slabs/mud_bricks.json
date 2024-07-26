@@ -4,13 +4,9 @@
     "description": {
       "identifier": "bt:mud_bricks.from_slab"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
-    "pattern": [
-      "##"
-    ],
+    "pattern": ["##"],
     "key": {
       "#": {
         "item": "minecraft:mud_brick_slab"

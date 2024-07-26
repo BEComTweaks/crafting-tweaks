@@ -4,16 +4,10 @@
     "description": {
       "identifier": "bt:universal_dyeing.orange_stained_glass_pane"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
     "group": "universal_dyeing_stained_glass_pane",
-    "pattern": [
-      "EEE",
-      "E0E",
-      "EEE"
-    ],
+    "pattern": ["EEE", "E0E", "EEE"],
     "key": {
       "E": {
         "item": "minecraft:stained_glass_pane"

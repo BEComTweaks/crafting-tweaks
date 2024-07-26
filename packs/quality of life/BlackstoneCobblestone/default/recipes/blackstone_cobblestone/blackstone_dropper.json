@@ -4,15 +4,9 @@
     "description": {
       "identifier": "bt:blackstone_dropper"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
-    "pattern": [
-      "###",
-      "# #",
-      "#R#"
-    ],
+    "pattern": ["###", "# #", "#R#"],
     "key": {
       "#": {
         "item": "minecraft:blackstone"

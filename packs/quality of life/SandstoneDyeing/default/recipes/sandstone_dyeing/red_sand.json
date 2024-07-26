@@ -4,9 +4,7 @@
     "description": {
       "identifier": "bt:red_sand_dyeing"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
     "result": {
       "item": "minecraft:sand",

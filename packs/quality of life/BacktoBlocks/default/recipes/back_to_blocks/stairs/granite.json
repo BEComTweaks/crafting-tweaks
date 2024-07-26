@@ -4,9 +4,7 @@
     "description": {
       "identifier": "bt:granite.from_stair"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
     "ingredients": [
       {

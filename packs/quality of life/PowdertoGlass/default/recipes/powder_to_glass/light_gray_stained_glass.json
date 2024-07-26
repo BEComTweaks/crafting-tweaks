@@ -4,9 +4,7 @@
     "description": {
       "identifier": "bt:light_gray.powder_to_glass"
     },
-    "tags": [
-      "furnace"
-    ],
+    "tags": ["furnace"],
     "input": {
       "item": "minecraft:concrete_powder",
       "data": 8

@@ -4,15 +4,9 @@
     "description": {
       "identifier": "minecraft:polished_blackstone_brick_stairs"
     },
-    "tags": [
-      "crafting_table"
-    ],
+    "tags": ["crafting_table"],
     "priority": 0,
-    "pattern": [
-      "#  ",
-      "## ",
-      "###"
-    ],
+    "pattern": ["#  ", "## ", "###"],
     "key": {
       "#": {
         "item": "minecraft:polished_blackstone_bricks"
