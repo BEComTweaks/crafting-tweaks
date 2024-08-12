@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - '**'
+  workflow_dispatch:
 
 jobs:
   format_repo:
@@ -18,7 +19,7 @@ jobs:
 
       - name: Format code with Prettier
         run: npx prettier --write "**/*.{js,ts,css,json}"
-
+s
       - name: Commit changes
         run: |
           git config --global user.name "NSPBot911"
