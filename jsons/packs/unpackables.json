@@ -4,30 +4,22 @@
     {
       "pack_id": "UnpackableIce",
       "pack_name": "Unpackable Ice",
-      "pack_description": "Allows you to break down Ice into 9 pieces. 1 Blue Ice to 9 Packed Ice to 81 Ice.",
-      "conflict": [],
-      "compatibility": []
+      "pack_description": "Allows you to break down Ice into 9 pieces. 1 Blue Ice to 9 Packed Ice to 81 Ice."
     },
     {
       "pack_id": "UnpackableNetherWart",
       "pack_name": "Unpackable Nether Wart",
-      "pack_description": "Allows you to break down Nether Wart Blocks into 9 Nether Wart.",
-      "conflict": [],
-      "compatibility": []
+      "pack_description": "Allows you to break down Nether Wart Blocks into 9 Nether Wart."
     },
     {
       "pack_id": "UnpackableWool",
       "pack_name": "Unpackable Wool",
-      "pack_description": "Allows you to break down Wool into 4 String.",
-      "conflict": [],
-      "compatibility": []
+      "pack_description": "Allows you to break down Wool into 4 String."
     },
     {
       "pack_id": "UnpackableMagma",
       "pack_name": "Unpackable Magma",
-      "pack_description": "Allows you to break down Magma Blocks into 4 Magma Creams.",
-      "conflict": [],
-      "compatibility": []
+      "pack_description": "Allows you to break down Magma Blocks into 4 Magma Creams."
     }
   ]
 }

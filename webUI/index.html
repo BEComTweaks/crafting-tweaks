@@ -2,24 +2,27 @@
 <html lang="en">
  <head>
   <meta content="Bedrock Edition Community Tweaks Crafting Tweaks" name="author"/>
-  <meta content="Crafting Tweak selector. Unofficially updated by BEComTweaks on GitHub" name="description"/>
+  <meta content="Crafting Tweaks selector. Unofficially updated by BEComTweaks on GitHub" name="description"/>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
    Crafting Tweaks
   </title>
-  <style>
-   @import url("https://becomtweaks.github.io/resource-packs/theme.css");
-  </style>
+  <link href="https://becomtweaks.github.io/resource-packs/theme.css" rel="stylesheet"/>
   <link href="images/icon.png" rel="icon" type="image/x-icon"/>
  </head>
  <body>
-  <br>
   <div id="background-container">
   </div>
   <script src="bg.js">
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js">
+  </script>
   <div class="half-dark">
+   <br>
+   <br>
    <div class="image-container">
     <img alt="Crafting Tweaks" id="title" src="images/title.png"/>
    </div>
@@ -29,9 +32,11 @@
       Home
      </a>
     </li>
-    <a class="nav-link" href="https://becomtweaks.github.io/docs">
-     Docs
-    </a>
+    <li>
+     <a class="nav-link" href="https://becomtweaks.github.io/docs">
+      Docs
+     </a>
+    </li>
     <li style="float:right">
      <a class="nav-link" href="https://becomtweaks.github.io/crafting-tweaks">
       Crafting Tweaks
@@ -70,18 +75,29 @@
      </a>
     </li>
    </ul>
+   <div class="preselected">
+    Pre-selected Tweaks!
+    <div class="preselected-unselect" onclick="processJsonData(getSelectedTweaks(),'unselect'); this.parentElement.style.top = '-10vh'; this.parentElement.style.transform = 'translateX(-50%)'; this.parentElement.innerText = 'Unselected!';">
+     Unselect?
+    </div>
+   </div>
    <div class="container">
-    <!-- Categories -->
     <div class="category">
      <div class="category-label" onclick="toggleCategory(this)">
       Quality of Life
      </div>
+     <button class="category-label-selectall" data-allpacks="N4IgTghg7iBcDaIBCEDGBrALgeyQG2wwGcQAaEAEWwFcAjPAUwGU8JaTyKxsAHHhsDgoBLIvwB2RAWRAAlbJkwNxAMUZEAFjgAyDCJg3TyAYQ0QwqbBDw58adBQCeDGcas3crDE5fkmEcQATIhxxBh9hcQBzGQBVcWEANwEiawjomSZMSGEorRwmM351DmQvdBDsMLdaegZKsJkABWwoQIEcAHFWIhIAXQBfIA" onclick="selectAll(this)">
+      <img class="category-label-selectall-img" src="images/select-all-button/chiseled_bookshelf_empty.png"/>
+      <div class="category-label-selectall-hovertext">
+       Select All
+      </div>
+     </button>
      <div class="category-controlled">
       <div class="tweaks">
        <div class="tweak" data-category="Quality of Life" data-index="0" data-name="BacktoBlocks" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak0" name="tweak" type="checkbox" value="tweak0"/>
-         <img alt="Back to Blocks" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/BacktoBlocks/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Back to Blocks" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/BacktoBlocks/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Back to Blocks
@@ -93,8 +109,8 @@
        </div>
        <div class="tweak" data-category="Quality of Life" data-index="1" data-name="DoubleSlabs" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak1" name="tweak" type="checkbox" value="tweak1"/>
-         <img alt="Double Slabs" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/DoubleSlabs/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Double Slabs" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/DoubleSlabs/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Double Slabs
@@ -106,8 +122,8 @@
        </div>
        <div class="tweak" data-category="Quality of Life" data-index="2" data-name="DroppertoDispenser" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak2" name="tweak" type="checkbox" value="tweak2"/>
-         <img alt="Dropper to Dispenser" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/DroppertoDispenser/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Dropper to Dispenser" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/DroppertoDispenser/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Dropper to Dispenser
@@ -119,8 +135,8 @@
        </div>
        <div class="tweak" data-category="Quality of Life" data-index="3" data-name="RottenFleshtoLeather" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak3" name="tweak" type="checkbox" value="tweak3"/>
-         <img alt="Rotten Flesh to Leather" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/RottenFleshtoLeather/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Rotten Flesh to Leather" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/RottenFleshtoLeather/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Rotten Flesh to Leather
@@ -132,8 +148,8 @@
        </div>
        <div class="tweak" data-category="Quality of Life" data-index="4" data-name="CharcoaltoBlackDye" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak4" name="tweak" type="checkbox" value="tweak4"/>
-         <img alt="Charcoal to Black Dye" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/CharcoaltoBlackDye/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Charcoal to Black Dye" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/CharcoaltoBlackDye/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Charcoal to Black Dye
@@ -145,8 +161,8 @@
        </div>
        <div class="tweak" data-category="Quality of Life" data-index="5" data-name="CoaltoBlackDye" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak5" name="tweak" type="checkbox" value="tweak5"/>
-         <img alt="Coal to Black Dye" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/CoaltoBlackDye/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Coal to Black Dye" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/CoaltoBlackDye/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Coal to Black Dye
@@ -158,8 +174,8 @@
        </div>
        <div class="tweak" data-category="Quality of Life" data-index="6" data-name="SandstoneDyeing" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak6" name="tweak" type="checkbox" value="tweak6"/>
-         <img alt="Sandstone Dyeing" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/SandstoneDyeing/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Sandstone Dyeing" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/SandstoneDyeing/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Sandstone Dyeing
@@ -171,8 +187,8 @@
        </div>
        <div class="tweak" data-category="Quality of Life" data-index="7" data-name="UniversalDyeing" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak7" name="tweak" type="checkbox" value="tweak7"/>
-         <img alt="Universal Dyeing" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/UniversalDyeing/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Universal Dyeing" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/UniversalDyeing/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Universal Dyeing
@@ -184,8 +200,8 @@
        </div>
        <div class="tweak" data-category="Quality of Life" data-index="8" data-name="StraighttoShapeless" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak8" name="tweak" type="checkbox" value="tweak8"/>
-         <img alt="Straight to Shapeless" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/StraighttoShapeless/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Straight to Shapeless" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/StraighttoShapeless/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Straight to Shapeless
@@ -197,8 +213,8 @@
        </div>
        <div class="tweak" data-category="Quality of Life" data-index="9" data-name="BlackstoneCobblestone" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak9" name="tweak" type="checkbox" value="tweak9"/>
-         <img alt="Blackstone Cobblestone" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/BlackstoneCobblestone/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Blackstone Cobblestone" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/BlackstoneCobblestone/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Blackstone Cobblestone
@@ -210,8 +226,8 @@
        </div>
        <div class="tweak" data-category="Quality of Life" data-index="10" data-name="PowdertoGlass" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak10" name="tweak" type="checkbox" value="tweak10"/>
-         <img alt="Powder to Glass" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/PowdertoGlass/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Powder to Glass" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/PowdertoGlass/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Powder to Glass
@@ -228,12 +244,18 @@
      <div class="category-label" onclick="toggleCategory(this)">
       More Blocks
      </div>
+     <button class="category-label-selectall" data-allpacks="N4IgTghg7iBcDaICyB7MBTAKpADgExTQGcQAaZNdAIQjAGsyKMBlAFwgEswTzUMqwHAMZ0SAXQC+QA" onclick="selectAll(this)">
+      <img class="category-label-selectall-img" src="images/select-all-button/chiseled_bookshelf_empty.png"/>
+      <div class="category-label-selectall-hovertext">
+       Select All
+      </div>
+     </button>
      <div class="category-controlled">
       <div class="tweaks">
        <div class="tweak" data-category="More Blocks" data-index="0" data-name="MoreTrapdoors" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak11" name="tweak" type="checkbox" value="tweak11"/>
-         <img alt="More Trapdoors" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/more blocks/MoreTrapdoors/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="More Trapdoors" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/more blocks/MoreTrapdoors/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           More Trapdoors
@@ -245,8 +267,8 @@
        </div>
        <div class="tweak" data-category="More Blocks" data-index="1" data-name="MoreBark" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak12" name="tweak" type="checkbox" value="tweak12"/>
-         <img alt="More Bark" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/more blocks/MoreBark/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="More Bark" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/more blocks/MoreBark/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           More Bark
@@ -258,8 +280,8 @@
        </div>
        <div class="tweak" data-category="More Blocks" data-index="2" data-name="MoreStairs" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak13" name="tweak" type="checkbox" value="tweak13"/>
-         <img alt="More Stairs" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/more blocks/MoreStairs/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="More Stairs" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/more blocks/MoreStairs/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           More Stairs
@@ -271,8 +293,8 @@
        </div>
        <div class="tweak" data-category="More Blocks" data-index="3" data-name="MoreBricks" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak14" name="tweak" type="checkbox" value="tweak14"/>
-         <img alt="More Bricks" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/more blocks/MoreBricks/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="More Bricks" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/more blocks/MoreBricks/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           More Bricks
@@ -289,12 +311,18 @@
      <div class="category-label" onclick="toggleCategory(this)">
       Craftables
      </div>
+     <button class="category-label-selectall" data-allpacks="N4IgTghg7iBcDaIDCkBmAXCAjANgUwHFIA3PHEAGmTU1zwAkB7MAZzwEEwBbZy6iDNnxJmEHACEcjAMYBrFgCYAHgr4oBtYaIlS5LAMxL9amkLwBRAHbSAFhEvo8AEwKMcTvJfYAHb-hYmGmYAchBceAAqEADmAVTqgnSSEHrojJZ4IAC6AL5AA" onclick="selectAll(this)">
+      <img class="category-label-selectall-img" src="images/select-all-button/chiseled_bookshelf_empty.png"/>
+      <div class="category-label-selectall-hovertext">
+       Select All
+      </div>
+     </button>
      <div class="category-controlled">
       <div class="tweaks">
        <div class="tweak" data-category="Craftables" data-index="0" data-name="CraftableGravel" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak15" name="tweak" type="checkbox" value="tweak15"/>
-         <img alt="Craftable Gravel" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableGravel/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Craftable Gravel" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableGravel/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Craftable Gravel
@@ -306,8 +334,8 @@
        </div>
        <div class="tweak" data-category="Craftables" data-index="1" data-name="CraftableHorseArmor" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak16" name="tweak" type="checkbox" value="tweak16"/>
-         <img alt="Craftable Horse Armor" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableHorseArmor/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Craftable Horse Armor" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableHorseArmor/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Craftable Horse Armor
@@ -319,8 +347,8 @@
        </div>
        <div class="tweak" data-category="Craftables" data-index="2" data-name="CraftableCoralBlocks2x2" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak17" name="tweak" type="checkbox" value="tweak17"/>
-         <img alt="Craftable Coral Blocks 2x2" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableCoralBlocks2x2/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Craftable Coral Blocks 2x2" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableCoralBlocks2x2/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Craftable Coral Blocks 2x2
@@ -332,8 +360,8 @@
        </div>
        <div class="tweak" data-category="Craftables" data-index="3" data-name="CraftableCoralBlocks3x3" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak18" name="tweak" type="checkbox" value="tweak18"/>
-         <img alt="Craftable Coral Blocks 3x3" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableCoralBlocks3x3/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Craftable Coral Blocks 3x3" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableCoralBlocks3x3/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Craftable Coral Blocks 3x3
@@ -345,8 +373,8 @@
        </div>
        <div class="tweak" data-category="Craftables" data-index="4" data-name="CraftableEnchantedGoldenApples" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak19" name="tweak" type="checkbox" value="tweak19"/>
-         <img alt="Craftable Enchanted Golden Apples" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableEnchantedGoldenApples/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Craftable Enchanted Golden Apples" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableEnchantedGoldenApples/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Craftable Enchanted Golden Apples
@@ -358,8 +386,8 @@
        </div>
        <div class="tweak" data-category="Craftables" data-index="5" data-name="CraftableNameTags" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak20" name="tweak" type="checkbox" value="tweak20"/>
-         <img alt="Craftable Name Tags" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableNameTags/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Craftable Name Tags" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableNameTags/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Craftable Name Tags
@@ -371,8 +399,8 @@
        </div>
        <div class="tweak" data-category="Craftables" data-index="6" data-name="CraftableBlackstone" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak21" name="tweak" type="checkbox" value="tweak21"/>
-         <img alt="Craftable Blackstone" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableBlackstone/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Craftable Blackstone" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableBlackstone/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Craftable Blackstone
@@ -389,12 +417,18 @@
      <div class="category-label" onclick="toggleCategory(this)">
       Unpackables
      </div>
+     <button class="category-label-selectall" data-allpacks="N4IgTghg7iBcDaICqA7ADhAxgawgIwBsBTASUyJABpl0tdCiA5IgFwAsiwB1CMFqmhhz5iXAPZiCA1EPrEAshADmAWwggAugF8gA" onclick="selectAll(this)">
+      <img class="category-label-selectall-img" src="images/select-all-button/chiseled_bookshelf_empty.png"/>
+      <div class="category-label-selectall-hovertext">
+       Select All
+      </div>
+     </button>
      <div class="category-controlled">
       <div class="tweaks">
        <div class="tweak" data-category="Unpackables" data-index="0" data-name="UnpackableIce" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak22" name="tweak" type="checkbox" value="tweak22"/>
-         <img alt="Unpackable Ice" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/unpackables/UnpackableIce/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Unpackable Ice" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/unpackables/UnpackableIce/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Unpackable Ice
@@ -406,8 +440,8 @@
        </div>
        <div class="tweak" data-category="Unpackables" data-index="1" data-name="UnpackableNetherWart" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak23" name="tweak" type="checkbox" value="tweak23"/>
-         <img alt="Unpackable Nether Wart" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/unpackables/UnpackableNetherWart/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Unpackable Nether Wart" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/unpackables/UnpackableNetherWart/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Unpackable Nether Wart
@@ -419,8 +453,8 @@
        </div>
        <div class="tweak" data-category="Unpackables" data-index="2" data-name="UnpackableWool" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak24" name="tweak" type="checkbox" value="tweak24"/>
-         <img alt="Unpackable Wool" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/unpackables/UnpackableWool/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Unpackable Wool" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/unpackables/UnpackableWool/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Unpackable Wool
@@ -432,8 +466,8 @@
        </div>
        <div class="tweak" data-category="Unpackables" data-index="3" data-name="UnpackableMagma" onclick="toggleSelection(this)">
         <div class="tweak-info">
-         <input id="tweak25" name="tweak" type="checkbox" value="tweak25"/>
-         <img alt="Unpackable Magma" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/unpackables/UnpackableMagma/pack_icon.png" style="width:82px; height:82px;"/>
+         <input name="tweak" type="checkbox"/>
+         <img alt="Unpackable Magma" loading="lazy" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/unpackables/UnpackableMagma/pack_icon.png" style="width:82px; height:82px;"/>
          <br>
          <label class="tweak-title" id="tweak">
           Unpackable Magma
@@ -475,7 +509,7 @@
     <div class="zipinputcontainer">
      <input id="zipInput" type="file"/>
     </div>
-    <button class="download-selected-button" onclick="downloadSelectedTweaks()">
+    <button class="download-selected-button" disabled="true" onclick="downloadSelectedTweaks()">
      Download Selected Tweaks
     </button>
     <div id="selected-tweaks">
@@ -538,7 +572,7 @@
      </code>
     </p>
     <p>
-     <a href="https://github.com/BEComTweaks/crafting-tweaks">
+     <a href="https://github.com/BEComTweaks/crafting-packs">
       GitHub
      </a>
     </p>
