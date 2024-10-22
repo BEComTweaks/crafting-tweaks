@@ -4,51 +4,37 @@
     {
       "pack_id": "CraftableGravel",
       "pack_name": "Craftable Gravel",
-      "pack_description": "Allows you to craft Gravel from Flint.",
-      "conflict": [],
-      "compatibility": []
+      "pack_description": "Allows you to craft Gravel from Flint."
     },
     {
       "pack_id": "CraftableHorseArmor",
       "pack_name": "Craftable Horse Armor",
-      "pack_description": "Allows you to craft Horse Armor.",
-      "conflict": [],
-      "compatibility": []
+      "pack_description": "Allows you to craft Horse Armor."
     },
     {
       "pack_id": "CraftableCoralBlocks2x2",
       "pack_name": "Craftable Coral Blocks 2x2",
-      "pack_description": "Allows you to craft Coral Blocks from their Coral Plant in a 2x2. Both Tubes and Fans may be used interchangably.",
-      "conflict": [],
-      "compatibility": []
+      "pack_description": "Allows you to craft Coral Blocks from their Coral Plant in a 2x2. Both Tubes and Fans may be used interchangably."
     },
     {
       "pack_id": "CraftableCoralBlocks3x3",
       "pack_name": "Craftable Coral Blocks 3x3",
-      "pack_description": "Allows you to craft Coral Blocks from their Coral Plant in a 3x3. Both Tubes and Fans may be used interchangably.",
-      "conflict": [],
-      "compatibility": []
+      "pack_description": "Allows you to craft Coral Blocks from their Coral Plant in a 3x3. Both Tubes and Fans may be used interchangably."
     },
     {
       "pack_id": "CraftableEnchantedGoldenApples",
       "pack_name": "Craftable Enchanted Golden Apples",
-      "pack_description": "Allows you to craft Enchanted Golden Apples.",
-      "conflict": [],
-      "compatibility": []
+      "pack_description": "Allows you to craft Enchanted Golden Apples."
     },
     {
       "pack_id": "CraftableNameTags",
       "pack_name": "Craftable Name Tags",
-      "pack_description": "Allows you to craft Name Tags.",
-      "conflict": [],
-      "compatibility": []
+      "pack_description": "Allows you to craft Name Tags."
     },
     {
       "pack_id": "CraftableBlackstone",
       "pack_name": "Craftable Blackstone",
-      "pack_description": "Allows you to craft Blackstone or Polished Blackstone, using Basalt &amp; Coal/Charcoal.",
-      "conflict": [],
-      "compatibility": []
+      "pack_description": "Allows you to craft Blackstone or Polished Blackstone, using Basalt &amp; Coal/Charcoal."
     }
   ]
 }
