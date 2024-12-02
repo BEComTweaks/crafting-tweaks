@@ -1,0 +1,22 @@
+{
+    "format_version": "1.19.0",
+    "minecraft:recipe_shaped": {
+      "description": {
+        "identifier": "bt:bamboo_planks.from_slab"
+      },
+      "tags": ["crafting_table"],
+      "priority": 0,
+      "pattern": ["##"],
+      "key": {
+        "#": {
+          "item": "minecraft:bamboo_slab"
+        }
+      },
+      "result": {
+        "item": "minecraft:bamboo_planks",
+        "count": 1
+      },
+      "group": "slabs_to_blocks"
+    }
+  }
+  
