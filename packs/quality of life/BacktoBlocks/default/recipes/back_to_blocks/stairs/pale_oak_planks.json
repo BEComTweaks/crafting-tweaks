@@ -21,9 +21,8 @@
       }
     ],
     "result": {
-      "item": "minecraft:planks",
-      "count": 3,
-      "data": 4
+      "item": "minecraft:pale_oak_planks",
+      "count": 3
     },
     "group": "stairs_to_block"
   }
