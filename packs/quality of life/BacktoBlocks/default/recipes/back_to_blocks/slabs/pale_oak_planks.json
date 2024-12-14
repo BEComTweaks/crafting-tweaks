@@ -14,9 +14,8 @@
       }
     },
     "result": {
-      "item": "minecraft:planks",
+      "item": "minecraft:pale_oak_planks",
       "count": 1,
-      "data": 4
     },
     "group": "slabs_to_blocks"
   }
