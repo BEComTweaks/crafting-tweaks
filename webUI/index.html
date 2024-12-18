@@ -2,598 +2,591 @@
 <html lang="en">
  <head>
   <meta content="Bedrock Edition Community Tweaks Crafting Tweaks" name="author"/>
-  <meta content="Crafting Tweaks selector. Unofficially updated by BEComTweaks on GitHub" name="description"/>
+  <meta content="Crafting Tweak Pack selector. Unofficially updated by BEComTweaks on GitHub" name="description"/>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
    Crafting Tweaks
   </title>
   <link href="images/icon.png" rel="icon" type="image/x-icon"/>
+  <link href="theme.css" rel="stylesheet"/>
+  <script src="extras/jszip.min.js">
+  </script>
+  <script src="extras/lz-string.min.js">
+  </script>
  </head>
  <body>
+  <ul class="large-nav">
+   <li>
+    <a class="nav-link" href="https://becomtweaks.github.io">
+     Home
+    </a>
+   </li>
+   <li>
+    <a class="nav-link" href="https://becomtweaks.github.io/docs">
+     Docs
+    </a>
+   </li>
+   <li>
+    <a class="nav-link" href="https://becomtweaks.github.io/discord">
+     Discord
+     <a>
+     </a>
+    </a>
+   </li>
+   <li style="float:right">
+    <a class="nav-link" href="https://becomtweaks.github.io/crafting-tweaks">
+     Crafting Tweaks
+    </a>
+   </li>
+   <li style="float:right">
+    <a class="nav-link" href="https://becomtweaks.github.io/behaviour-packs">
+     Behaviour Packs
+    </a>
+   </li>
+   <li style="float:right">
+    <a class="nav-link" href="https://becomtweaks.github.io/resource-packs">
+     Resource Packs
+    </a>
+   </li>
+  </ul>
+  <ul class="small-nav">
+   <li>
+    <a class="nav-link" href="https://becomtweaks.github.io">
+     Home
+    </a>
+   </li>
+   <li style="float:right">
+    <a class="nav-link" href="https://becomtweaks.github.io/crafting-tweaks">
+     CTs
+    </a>
+   </li>
+   <li style="float:right">
+    <a class="nav-link" href="https://becomtweaks.github.io/behaviour-packs">
+     BPs
+    </a>
+   </li>
+   <li style="float:right">
+    <a class="nav-link" href="https://becomtweaks.github.io/-packs">
+     RPs
+    </a>
+   </li>
+  </ul>
   <div id="background-container">
   </div>
-  <link href="../oreui-html/src/oreui.css" rel="stylesheet"/>
-  <link href="style.css" rel="stylesheet">
-   <link href="https://becomtweaks.github.io/resource-packs/theme.css" rel="stylesheet"/>
-   <script src="bg.js">
-   </script>
-   <script src="../oreui-html/src/oreui.js">
-   </script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js">
-   </script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js">
-   </script>
-   <div class="half-dark">
-    <br>
-    <br>
-    <div class="image-container">
-     <img alt="Crafting Tweaks" id="title" src="images/title.png"/>
-    </div>
-    <ul class="large-nav">
-     <li>
-      <a class="nav-link" href="https://becomtweaks.github.io">
-       Home
-      </a>
-     </li>
-     <li>
-      <a class="nav-link" href="https://becomtweaks.github.io/docs">
-       Docs
-      </a>
-     </li>
-     <li>
-      <a class="nav-link" href="https://becomtweaks.github.io/discord">
-       Discord
-      </a>
-     </li>
-     <li style="float:right">
-      <a class="nav-link" href="https://becomtweaks.github.io/crafting-tweaks">
-       Crafting Tweaks
-      </a>
-     </li>
-     <li style="float:right">
-      <a class="nav-link" href="https://becomtweaks.github.io/behaviour-packs">
-       Behaviour Packs
-      </a>
-     </li>
-     <li style="float:right">
-      <a class="nav-link" href="https://becomtweaks.github.io/resource-packs">
-       Resource Packs
-      </a>
-     </li>
-    </ul>
-    <ul class="small-nav">
-     <li>
-      <a class="nav-link" href="https://becomtweaks.github.io">
-       Home
-      </a>
-     </li>
-     <li style="float:right">
-      <a class="nav-link" href="https://becomtweaks.github.io/crafting-tweaks">
-       CTs
-      </a>
-     </li>
-     <li style="float:right">
-      <a class="nav-link" href="https://becomtweaks.github.io/behaviour-packs">
-       BPs
-      </a>
-     </li>
-     <li style="float:right">
-      <a class="nav-link" href="https://becomtweaks.github.io/resource-packs">
-       RPs
-      </a>
-     </li>
-    </ul>
-    <div class="preselected" oreui-color="dark" oreui-type="general">
-     Pre-selected Tweaks!
-     <div class="preselected-unselect" onclick="processJsonData(getSelectedTweaks(),'unselect'); this.parentElement.style.top = '-20vh'; this.parentElement.innerText = 'Unselected!';">
-      Unselect?
-     </div>
-    </div>
-    <div class="container">
-     <div class="search-container">
-      <input id="searchBar" oninput="filterPacks()" oreui-color="dark" oreui-type="input" placeholder="Search for a pack..." type="text"/>
-      <div class="search-results" id="searchResults" oreui-color="dark" oreui-type="general">
-      </div>
-     </div>
-     <div class="category">
-      <div class="category-label" onclick="OreUI.toggleActive(this);toggleCategory(this);" oreui-color="dark" oreui-type="button">
-       Quality of Life
-      </div>
-      <button class="category-label-selectall" data-allpacks="N4IgTghg7iBcDaIBCEDGBrALgeyQG2wwGcQAaEAEWwFcAjPAUwGU8JaTyKxsAHHhsDgoBLIvwB2RAWRAAlbJkwNxAMUZEAFjgAyDCJg3TyAYQ0QwqbBDw58adBQCeDGcas3crDE5fkmEcQATIhxxBh9hcQBzGQBVcWEANwEiawjomSZMSGEorRwmM351DmQvdBDsMLdaegZKsJkABWwoQIEcAHFWIhIAXQBfIA" onclick="selectAll(this)">
-       <img class="category-label-selectall-img" src="images/select-all-button/chiseled_bookshelf_empty.png"/>
-       <div class="category-label-selectall-hovertext">
-        Select All
-       </div>
-      </button>
-      <div class="category-controlled" oreui-color="dark" oreui-type="general">
-       <div class="tweaks">
-        <div class="tweak" data-category="Quality of Life" data-index="0" data-name="BacktoBlocks" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Back to Blocks" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/BacktoBlocks/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Back to Blocks
-          </label>
-          <div class="tweak-description">
-           Allows you to craft full blocks from stairs and slabs.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="Quality of Life" data-index="1" data-name="DoubleSlabs" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Double Slabs" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/DoubleSlabs/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Double Slabs
-          </label>
-          <div class="tweak-description">
-           Allows you to craft 2 slabs from a single block.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="Quality of Life" data-index="2" data-name="DroppertoDispenser" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Dropper to Dispenser" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/DroppertoDispenser/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Dropper to Dispenser
-          </label>
-          <div class="tweak-description">
-           Allows you to convert a Dropper to a Dispenser using a Bow, or by using String and Sticks.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="Quality of Life" data-index="3" data-name="RottenFleshtoLeather" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Rotten Flesh to Leather" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/RottenFleshtoLeather/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Rotten Flesh to Leather
-          </label>
-          <div class="tweak-description">
-           Allows you to smelt Rotten Flesh into Leather.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="Quality of Life" data-index="4" data-name="CharcoaltoBlackDye" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Charcoal to Black Dye" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/CharcoaltoBlackDye/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Charcoal to Black Dye
-          </label>
-          <div class="tweak-description">
-           Allows you to craft Charcoal into Black Dye.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="Quality of Life" data-index="5" data-name="CoaltoBlackDye" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Coal to Black Dye" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/CoaltoBlackDye/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Coal to Black Dye
-          </label>
-          <div class="tweak-description">
-           Allows you to craft Coal into Black Dye.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="Quality of Life" data-index="6" data-name="SandstoneDyeing" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Sandstone Dyeing" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/SandstoneDyeing/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Sandstone Dyeing
-          </label>
-          <div class="tweak-description">
-           Allows you to craft Sandstone with Red Dye to get Red Sandstone.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="Quality of Life" data-index="7" data-name="UniversalDyeing" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Universal Dyeing" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/UniversalDyeing/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Universal Dyeing
-          </label>
-          <div class="tweak-description">
-           Allows you to dye any dyeable block to another color, no matter what color it is (does not include Wool and Concrete).
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="Quality of Life" data-index="8" data-name="StraighttoShapeless" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Straight to Shapeless" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/StraighttoShapeless/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Straight to Shapeless
-          </label>
-          <div class="tweak-description">
-           Craft items such as Paper, Bread and Shulker Boxes directly in your 2x2.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="Quality of Life" data-index="9" data-name="BlackstoneCobblestone" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Blackstone Cobblestone" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/BlackstoneCobblestone/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Blackstone Cobblestone
-          </label>
-          <div class="tweak-description">
-           Craft all items that require Cobblestone, using Blackstone.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="Quality of Life" data-index="10" data-name="PowdertoGlass" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Powder to Glass" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/quality of life/PowdertoGlass/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Powder to Glass
-          </label>
-          <div class="tweak-description">
-           Smelt all colors of Concrete Powder into their respective Stained Glass color.
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
-     <div class="category">
-      <div class="category-label" onclick="OreUI.toggleActive(this);toggleCategory(this);" oreui-color="dark" oreui-type="button">
-       More Blocks
-      </div>
-      <button class="category-label-selectall" data-allpacks="N4IgTghg7iBcDaICyB7MBTAKpADgExTQGcQAaZNdAIQjAGsyKMBlAFwgEswTzUMqwHAMZ0SAXQC+QA" onclick="selectAll(this)">
-       <img class="category-label-selectall-img" src="images/select-all-button/chiseled_bookshelf_empty.png"/>
-       <div class="category-label-selectall-hovertext">
-        Select All
-       </div>
-      </button>
-      <div class="category-controlled" oreui-color="dark" oreui-type="general">
-       <div class="tweaks">
-        <div class="tweak" data-category="More Blocks" data-index="0" data-name="MoreTrapdoors" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="More Trapdoors" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/more blocks/MoreTrapdoors/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           More Trapdoors
-          </label>
-          <div class="tweak-description">
-           Creates 12 Trapdoors instead of 3.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="More Blocks" data-index="1" data-name="MoreBark" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="More Bark" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/more blocks/MoreBark/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           More Bark
-          </label>
-          <div class="tweak-description">
-           Creates 4 Bark instead of 3.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="More Blocks" data-index="2" data-name="MoreStairs" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="More Stairs" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/more blocks/MoreStairs/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           More Stairs
-          </label>
-          <div class="tweak-description">
-           Creates 8 Stairs instead of 4.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="More Blocks" data-index="3" data-name="MoreBricks" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="More Bricks" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/more blocks/MoreBricks/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           More Bricks
-          </label>
-          <div class="tweak-description">
-           Creates 4 Bricks instead of 1.
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
-     <div class="category">
-      <div class="category-label" onclick="OreUI.toggleActive(this);toggleCategory(this);" oreui-color="dark" oreui-type="button">
-       Craftables
-      </div>
-      <button class="category-label-selectall" data-allpacks="N4IgTghg7iBcDaIDCkBmAXCAjANgUwHFIA3PHEAGmTU1zwAkB7MAZzwEEwBbZy6iDNnxJmEHACEcjAMYBrFgCYAHgr4oBtYaIlS5LAMxL9amkLwBRAHbSAFhEvo8AEwKMcTvJfYAHb-hYmGmYAchBceAAqEADmAVTqgnSSEHrojJZ4IAC6AL5AA" onclick="selectAll(this)">
-       <img class="category-label-selectall-img" src="images/select-all-button/chiseled_bookshelf_empty.png"/>
-       <div class="category-label-selectall-hovertext">
-        Select All
-       </div>
-      </button>
-      <div class="category-controlled" oreui-color="dark" oreui-type="general">
-       <div class="tweaks">
-        <div class="tweak" data-category="Craftables" data-index="0" data-name="CraftableGravel" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Craftable Gravel" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableGravel/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Craftable Gravel
-          </label>
-          <div class="tweak-description">
-           Allows you to craft Gravel from Flint.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="Craftables" data-index="1" data-name="CraftableHorseArmor" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Craftable Horse Armor" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableHorseArmor/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Craftable Horse Armor
-          </label>
-          <div class="tweak-description">
-           Allows you to craft Horse Armor.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="Craftables" data-index="2" data-name="CraftableCoralBlocks2x2" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Craftable Coral Blocks 2x2" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableCoralBlocks2x2/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Craftable Coral Blocks 2x2
-          </label>
-          <div class="tweak-description">
-           Allows you to craft Coral Blocks from their Coral Plant in a 2x2. Both Tubes and Fans may be used interchangably.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="Craftables" data-index="3" data-name="CraftableCoralBlocks3x3" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Craftable Coral Blocks 3x3" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableCoralBlocks3x3/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Craftable Coral Blocks 3x3
-          </label>
-          <div class="tweak-description">
-           Allows you to craft Coral Blocks from their Coral Plant in a 3x3. Both Tubes and Fans may be used interchangably.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="Craftables" data-index="4" data-name="CraftableEnchantedGoldenApples" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Craftable Enchanted Golden Apples" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableEnchantedGoldenApples/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Craftable Enchanted Golden Apples
-          </label>
-          <div class="tweak-description">
-           Allows you to craft Enchanted Golden Apples.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="Craftables" data-index="5" data-name="CraftableNameTags" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Craftable Name Tags" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableNameTags/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Craftable Name Tags
-          </label>
-          <div class="tweak-description">
-           Allows you to craft Name Tags.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="Craftables" data-index="6" data-name="CraftableBlackstone" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Craftable Blackstone" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/craftables/CraftableBlackstone/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Craftable Blackstone
-          </label>
-          <div class="tweak-description">
-           Allows you to craft Blackstone or Polished Blackstone, using Basalt &amp; Coal/Charcoal.
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
-     <div class="category">
-      <div class="category-label" onclick="OreUI.toggleActive(this);toggleCategory(this);" oreui-color="dark" oreui-type="button">
-       Unpackables
-      </div>
-      <button class="category-label-selectall" data-allpacks="N4IgTghg7iBcDaICqA7ADhAxgawgIwBsBTASUyJABpl0tdCiA5IgFwAsiwB1CMFqmhhz5iXAPZiCA1EPrEAshADmAWwggAugF8gA" onclick="selectAll(this)">
-       <img class="category-label-selectall-img" src="images/select-all-button/chiseled_bookshelf_empty.png"/>
-       <div class="category-label-selectall-hovertext">
-        Select All
-       </div>
-      </button>
-      <div class="category-controlled" oreui-color="dark" oreui-type="general">
-       <div class="tweaks">
-        <div class="tweak" data-category="Unpackables" data-index="0" data-name="UnpackableIce" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Unpackable Ice" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/unpackables/UnpackableIce/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Unpackable Ice
-          </label>
-          <div class="tweak-description">
-           Allows you to break down Ice into 9 pieces. 1 Blue Ice to 9 Packed Ice to 81 Ice.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="Unpackables" data-index="1" data-name="UnpackableNetherWart" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Unpackable Nether Wart" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/unpackables/UnpackableNetherWart/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Unpackable Nether Wart
-          </label>
-          <div class="tweak-description">
-           Allows you to break down Nether Wart Blocks into 9 Nether Wart.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="Unpackables" data-index="2" data-name="UnpackableWool" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Unpackable Wool" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/unpackables/UnpackableWool/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Unpackable Wool
-          </label>
-          <div class="tweak-description">
-           Allows you to break down Wool into 4 String.
-          </div>
-         </div>
-        </div>
-        <div class="tweak" data-category="Unpackables" data-index="3" data-name="UnpackableMagma" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
-         <div class="tweak-info">
-          <input name="tweak" type="checkbox"/>
-          <img alt="Unpackable Magma" src="https://raw.githubusercontent.com/BEComTweaks/crafting-tweaks/main/packs/unpackables/UnpackableMagma/pack_icon.png" style="width:82px; height:82px;"/>
-          <br>
-          <label class="tweak-title" id="tweak">
-           Unpackable Magma
-          </label>
-          <div class="tweak-description">
-           Allows you to break down Magma Blocks into 4 Magma Creams.
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-    <div class="download-container">
-     <div class="file-download">
-      <input id="fileNameInput" oreui-color="dark" oreui-type="input" placeholder="Enter Pack name" type="text"/>
-      <br>
-      <select id="mev" name="mev" oreui-color="dark" oreui-type="general">
-       <option value="1.21.40">
-        1.21.40
-       </option>
-       <option value="1.21.0">
-        1.21
-       </option>
-       <option value="1.20.0">
-        1.20
-       </option>
-       <option value="1.19.0">
-        1.19
-       </option>
-       <option value="1.18.0">
-        1.18
-       </option>
-       <option value="1.17.0">
-        1.17
-       </option>
-       <option value="1.16.0">
-        1.16
-       </option>
-      </select>
-     </div>
-     <div class="zipinputcontainer" oreui-color="purple" oreui-type="button">
-      <input id="zipInput" type="file">
-       <span class="selectedFile">
-        Upload Pack
-       </span>
-      </input>
-     </div>
-     <button class="download-selected-button" disabled="" onclick="downloadSelectedTweaks()" oreui-color="dark" oreui-type="button">
-      Download Selected Tweaks
-     </button>
-     <div id="selected-tweaks" oreui-color="dark" oreui-type="general">
-      <div class="tweak-list-pack">
-       Select some packs and see them appear here!
-      </div>
-     </div>
-    </div>
-    <script src="searchbar.js">
-    </script>
-    <script src="app.js">
-    </script>
+  <script src="bg.js">
+  </script>
+  <div class="half-dark">
+  </div>
+  <br>
+  <br>
+  <div class="image-container">
+   <img alt="Crafting Tweaks" id="title" src="images/title.png"/>
+  </div>
+  <div class="preselected" oreui-color="dark" oreui-type="general">
+   Pre-selected Tweaks!
+   <div class="preselected-unselect" onclick="processJsonData(getSelectedTweaks(),'unselect'); this.parentElement.style.top = '-20vh'; this.parentElement.innerText = 'Unselected!';">
+    Unselect?
    </div>
-  </link>
+  </div>
+  <div class="container">
+   <div class="search-container">
+    <input id="searchBar" oninput="filterPacks()" oreui-color="dark" oreui-type="input" placeholder="Search for a pack..." type="text"/>
+    <div class="search-results" id="searchResults" oreui-color="dark" oreui-type="general">
+    </div>
+   </div>
+   <div class="category">
+    <div class="category-label" onclick="OreUI.toggleActive(this);toggleCategory(this);" oreui-color="dark" oreui-type="button">
+     Quality of Life
+    </div>
+    <button class="category-label-selectall" data-allpacks="N4IgTghg7iBcDaIBCEDGBrALgeyQG2wwGcQAaEAEWwFcAjPAUwGU8JaTyKxsAHHhsDgoBLIvwB2RAWRAAlbJkwNxAMUZEAFjgAyDCJg3TyAYQ0QwqbBDw58adBQCeDGcas3crDE5fkmEcQATIhxxBh9hcQBzGQBVcWEANwEiawjomSZMSGEorRwmM351DmQvdBDsMLdaegZKsJkABWwoQIEcAHFWIhIAXQBfIA" onclick="selectAll(this)">
+     <img class="category-label-selectall-img" src="images/select-all-button/chiseled_bookshelf_empty.png"/>
+     <div class="category-label-selectall-hovertext">
+      Select All
+     </div>
+    </button>
+    <div class="category-controlled" oreui-color="dark" oreui-type="general">
+     <div class="tweaks">
+      <div class="tweak" data-category="Quality of Life" data-index="0" data-name="BacktoBlocks" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Back to Blocks" src="../packs/quality of life/BacktoBlocks/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Back to Blocks
+        </label>
+        <div class="tweak-description">
+         Allows you to craft full blocks from stairs and slabs.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="Quality of Life" data-index="1" data-name="DoubleSlabs" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Double Slabs" src="../packs/quality of life/DoubleSlabs/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Double Slabs
+        </label>
+        <div class="tweak-description">
+         Allows you to craft 2 slabs from a single block.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="Quality of Life" data-index="2" data-name="DroppertoDispenser" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Dropper to Dispenser" src="../packs/quality of life/DroppertoDispenser/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Dropper to Dispenser
+        </label>
+        <div class="tweak-description">
+         Allows you to convert a Dropper to a Dispenser using a Bow, or by using String and Sticks.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="Quality of Life" data-index="3" data-name="RottenFleshtoLeather" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Rotten Flesh to Leather" src="../packs/quality of life/RottenFleshtoLeather/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Rotten Flesh to Leather
+        </label>
+        <div class="tweak-description">
+         Allows you to smelt Rotten Flesh into Leather.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="Quality of Life" data-index="4" data-name="CharcoaltoBlackDye" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Charcoal to Black Dye" src="../packs/quality of life/CharcoaltoBlackDye/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Charcoal to Black Dye
+        </label>
+        <div class="tweak-description">
+         Allows you to craft Charcoal into Black Dye.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="Quality of Life" data-index="5" data-name="CoaltoBlackDye" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Coal to Black Dye" src="../packs/quality of life/CoaltoBlackDye/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Coal to Black Dye
+        </label>
+        <div class="tweak-description">
+         Allows you to craft Coal into Black Dye.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="Quality of Life" data-index="6" data-name="SandstoneDyeing" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Sandstone Dyeing" src="../packs/quality of life/SandstoneDyeing/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Sandstone Dyeing
+        </label>
+        <div class="tweak-description">
+         Allows you to craft Sandstone with Red Dye to get Red Sandstone.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="Quality of Life" data-index="7" data-name="UniversalDyeing" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Universal Dyeing" src="../packs/quality of life/UniversalDyeing/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Universal Dyeing
+        </label>
+        <div class="tweak-description">
+         Allows you to dye any dyeable block to another color, no matter what color it is (does not include Wool and Concrete).
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="Quality of Life" data-index="8" data-name="StraighttoShapeless" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Straight to Shapeless" src="../packs/quality of life/StraighttoShapeless/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Straight to Shapeless
+        </label>
+        <div class="tweak-description">
+         Craft items such as Paper, Bread and Shulker Boxes directly in your 2x2.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="Quality of Life" data-index="9" data-name="BlackstoneCobblestone" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Blackstone Cobblestone" src="../packs/quality of life/BlackstoneCobblestone/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Blackstone Cobblestone
+        </label>
+        <div class="tweak-description">
+         Craft all items that require Cobblestone, using Blackstone.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="Quality of Life" data-index="10" data-name="PowdertoGlass" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Powder to Glass" src="../packs/quality of life/PowdertoGlass/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Powder to Glass
+        </label>
+        <div class="tweak-description">
+         Smelt all colors of Concrete Powder into their respective Stained Glass color.
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="category">
+    <div class="category-label" onclick="OreUI.toggleActive(this);toggleCategory(this);" oreui-color="dark" oreui-type="button">
+     More Blocks
+    </div>
+    <button class="category-label-selectall" data-allpacks="N4IgTghg7iBcDaICyB7MBTAKpADgExTQGcQAaZNdAIQjAGsyKMBlAFwgEswTzUMqwHAMZ0SAXQC+QA" onclick="selectAll(this)">
+     <img class="category-label-selectall-img" src="images/select-all-button/chiseled_bookshelf_empty.png"/>
+     <div class="category-label-selectall-hovertext">
+      Select All
+     </div>
+    </button>
+    <div class="category-controlled" oreui-color="dark" oreui-type="general">
+     <div class="tweaks">
+      <div class="tweak" data-category="More Blocks" data-index="0" data-name="MoreTrapdoors" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="More Trapdoors" src="../packs/more blocks/MoreTrapdoors/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         More Trapdoors
+        </label>
+        <div class="tweak-description">
+         Creates 12 Trapdoors instead of 3.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="More Blocks" data-index="1" data-name="MoreBark" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="More Bark" src="../packs/more blocks/MoreBark/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         More Bark
+        </label>
+        <div class="tweak-description">
+         Creates 4 Bark instead of 3.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="More Blocks" data-index="2" data-name="MoreStairs" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="More Stairs" src="../packs/more blocks/MoreStairs/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         More Stairs
+        </label>
+        <div class="tweak-description">
+         Creates 8 Stairs instead of 4.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="More Blocks" data-index="3" data-name="MoreBricks" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="More Bricks" src="../packs/more blocks/MoreBricks/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         More Bricks
+        </label>
+        <div class="tweak-description">
+         Creates 4 Bricks instead of 1.
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="category">
+    <div class="category-label" onclick="OreUI.toggleActive(this);toggleCategory(this);" oreui-color="dark" oreui-type="button">
+     Craftables
+    </div>
+    <button class="category-label-selectall" data-allpacks="N4IgTghg7iBcDaIDCkBmAXCAjANgUwHFIA3PHEAGmTU1zwAkB7MAZzwEEwBbZy6iDNnxJmEHACEcjAMYBrFgCYAHgr4oBtYaIlS5LAMxL9amkLwBRAHbSAFhEvo8AEwKMcTvJfYAHb-hYmGmYAchBceAAqEADmAVTqgnSSEHrojJZ4IAC6AL5AA" onclick="selectAll(this)">
+     <img class="category-label-selectall-img" src="images/select-all-button/chiseled_bookshelf_empty.png"/>
+     <div class="category-label-selectall-hovertext">
+      Select All
+     </div>
+    </button>
+    <div class="category-controlled" oreui-color="dark" oreui-type="general">
+     <div class="tweaks">
+      <div class="tweak" data-category="Craftables" data-index="0" data-name="CraftableGravel" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Craftable Gravel" src="../packs/craftables/CraftableGravel/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Craftable Gravel
+        </label>
+        <div class="tweak-description">
+         Allows you to craft Gravel from Flint.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="Craftables" data-index="1" data-name="CraftableHorseArmor" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Craftable Horse Armor" src="../packs/craftables/CraftableHorseArmor/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Craftable Horse Armor
+        </label>
+        <div class="tweak-description">
+         Allows you to craft Horse Armor.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="Craftables" data-index="2" data-name="CraftableCoralBlocks2x2" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Craftable Coral Blocks 2x2" src="../packs/craftables/CraftableCoralBlocks2x2/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Craftable Coral Blocks 2x2
+        </label>
+        <div class="tweak-description">
+         Allows you to craft Coral Blocks from their Coral Plant in a 2x2. Both Tubes and Fans may be used interchangably.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="Craftables" data-index="3" data-name="CraftableCoralBlocks3x3" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Craftable Coral Blocks 3x3" src="../packs/craftables/CraftableCoralBlocks3x3/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Craftable Coral Blocks 3x3
+        </label>
+        <div class="tweak-description">
+         Allows you to craft Coral Blocks from their Coral Plant in a 3x3. Both Tubes and Fans may be used interchangably.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="Craftables" data-index="4" data-name="CraftableEnchantedGoldenApples" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Craftable Enchanted Golden Apples" src="../packs/craftables/CraftableEnchantedGoldenApples/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Craftable Enchanted Golden Apples
+        </label>
+        <div class="tweak-description">
+         Allows you to craft Enchanted Golden Apples.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="Craftables" data-index="5" data-name="CraftableNameTags" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Craftable Name Tags" src="../packs/craftables/CraftableNameTags/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Craftable Name Tags
+        </label>
+        <div class="tweak-description">
+         Allows you to craft Name Tags.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="Craftables" data-index="6" data-name="CraftableBlackstone" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Craftable Blackstone" src="../packs/craftables/CraftableBlackstone/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Craftable Blackstone
+        </label>
+        <div class="tweak-description">
+         Allows you to craft Blackstone or Polished Blackstone, using Basalt &amp; Coal/Charcoal.
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="category">
+    <div class="category-label" onclick="OreUI.toggleActive(this);toggleCategory(this);" oreui-color="dark" oreui-type="button">
+     Unpackables
+    </div>
+    <button class="category-label-selectall" data-allpacks="N4IgTghg7iBcDaICqA7ADhAxgawgIwBsBTASUyJABpl0tdCiA5IgFwAsiwB1CMFqmhhz5iXAPZiCA1EPrEAshADmAWwggAugF8gA" onclick="selectAll(this)">
+     <img class="category-label-selectall-img" src="images/select-all-button/chiseled_bookshelf_empty.png"/>
+     <div class="category-label-selectall-hovertext">
+      Select All
+     </div>
+    </button>
+    <div class="category-controlled" oreui-color="dark" oreui-type="general">
+     <div class="tweaks">
+      <div class="tweak" data-category="Unpackables" data-index="0" data-name="UnpackableIce" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Unpackable Ice" src="../packs/unpackables/UnpackableIce/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Unpackable Ice
+        </label>
+        <div class="tweak-description">
+         Allows you to break down Ice into 9 pieces. 1 Blue Ice to 9 Packed Ice to 81 Ice.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="Unpackables" data-index="1" data-name="UnpackableNetherWart" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Unpackable Nether Wart" src="../packs/unpackables/UnpackableNetherWart/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Unpackable Nether Wart
+        </label>
+        <div class="tweak-description">
+         Allows you to break down Nether Wart Blocks into 9 Nether Wart.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="Unpackables" data-index="2" data-name="UnpackableWool" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Unpackable Wool" src="../packs/unpackables/UnpackableWool/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Unpackable Wool
+        </label>
+        <div class="tweak-description">
+         Allows you to break down Wool into 4 String.
+        </div>
+       </div>
+      </div>
+      <div class="tweak" data-category="Unpackables" data-index="3" data-name="UnpackableMagma" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+       <div class="tweak-info">
+        <input name="tweak" type="checkbox"/>
+        <img alt="Unpackable Magma" src="../packs/unpackables/UnpackableMagma/pack_icon.png" style="width:82px; height:82px;"/>
+        <br>
+        <label class="tweak-title" id="tweak">
+         Unpackable Magma
+        </label>
+        <div class="tweak-description">
+         Allows you to break down Magma Blocks into 4 Magma Creams.
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="download-container">
+   <div class="file-download">
+    <input id="fileNameInput" oreui-color="dark" oreui-type="input" placeholder="Enter Pack name" type="text"/>
+    <br>
+    <select id="mev" name="mev" oreui-color="dark" oreui-type="general">
+     <option value="1.21.40">
+      1.21.40
+     </option>
+     <option value="1.21.0">
+      1.21
+     </option>
+     <option value="1.20.0">
+      1.20
+     </option>
+     <option value="1.19.0">
+      1.19
+     </option>
+     <option value="1.18.0">
+      1.18
+     </option>
+     <option value="1.17.0">
+      1.17
+     </option>
+     <option value="1.16.0">
+      1.16
+     </option>
+    </select>
+   </div>
+   <div class="zipinputcontainer" oreui-color="purple" oreui-type="button">
+    <input id="zipInput" type="file">
+     <span class="selectedFile">
+      Upload Pack
+     </span>
+    </input>
+   </div>
+   <button class="download-selected-button" disabled="" onclick="downloadSelectedTweaks()" oreui-color="dark" oreui-type="button">
+    Download Selected Tweaks
+   </button>
+   <div id="selected-tweaks" oreui-color="dark" oreui-type="general">
+    <div class="tweak-list-pack">
+     Select some packs and see them appear here!
+    </div>
+   </div>
+  </div>
+  <script src="app.js">
+  </script>
  </body>
  <footer class="footer-container">
-  <div class="half-dark">
-   <div class="credits-footer" oreui-color="dark" oreui-type="general">
-    <h2>
-     This would not have been possible if not for the following
-    </h2>
-    <h3>
-     Websites
-    </h3>
-    <p>
-     <a href="https://vanillatweaks.net">
-      Vanilla Tweaks
-     </a>
-     - Without them, Bedrock Tweaks would have not been this way
-    </p>
-    <p>
-     <a href="https://bedrocktweaks.net">
-      Bedrock Tweaks
-     </a>
-     - Without DrAV, this would have taken a long time to complete
-    </p>
-    <h3>
-     Individuals
-    </h3>
-    <p>
-     <a href="https://github.com/yzabeast1">
-      YzaBeast1
-     </a>
-     - Pointed out issues with my code preventing Linux Distributions from running the scripts, and took the jump to make a webUI and backend
-    </p>
-    <p>
-     <a href="https://github.com/NSPC911">
-      NSPC911
-     </a>
-     - Yep, that's me, the one who started this all!
-    </p>
-    <p>
-     If you contributed directly or indirectly and want a place here, contact me on Discord at
-     <code>
-      @nspg911
-     </code>
-    </p>
-    <p>
-     <a href="https://github.com/BEComTweaks/crafting-packs">
-      GitHub
-     </a>
-    </p>
-   </div>
+  <div class="credits-footer" oreui-color="dark" oreui-type="general">
+   <h2>
+    This would not have been possible if not for the following
+   </h2>
+   <h3>
+    Websites
+   </h3>
+   <p>
+    <a href="https://vanillatweaks.net">
+     Vanilla Tweaks
+    </a>
+    - Without them, Bedrock Tweaks would have not been this way
+   </p>
+   <p>
+    <a href="https://bedrocktweaks.net">
+     Bedrock Tweaks
+    </a>
+    - Without DrAV, this would have taken a long time to complete
+   </p>
+   <h3>
+    Individuals
+   </h3>
+   <p>
+    <a href="https://github.com/yzabeast1">
+     YzaBeast1
+    </a>
+    - Pointed out issues with my code preventing Linux Distributions from running the scripts, and took the jump to make a webUI and backend
+   </p>
+   <p>
+    <a href="https://github.com/NSPC911">
+     NSPC911
+    </a>
+    - Yep, that's me, the one who started this all!
+   </p>
+   <p>
+    If you contributed directly or indirectly and want a place here, contact me on Discord at
+    <code>
+     @nspg911
+    </code>
+   </p>
+   <p>
+    <a href="https://github.com/BEComTweaks/crafting-tweaks">
+     GitHub
+    </a>
+   </p>
   </div>
  </footer>
 </html>
