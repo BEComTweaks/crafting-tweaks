@@ -9,8 +9,7 @@
     "pattern": ["##"],
     "key": {
       "#": {
-        "item": "minecraft:wooden_slab",
-        "data": 4
+        "item": "minecraft:pale_oak_slab"
       }
     },
     "result": {
