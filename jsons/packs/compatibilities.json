@@ -1,0 +1,16 @@
+{
+  "$schema": "https://becomtweaks.github.io/schema/compatibilities.json",
+  "max_simultaneous": 3,
+  "3way": [
+    {
+      "merge": [],
+      "location": ""
+    }
+  ],
+  "2way": [
+    {
+      "merge": [],
+      "location": ""
+    }
+  ]
+}

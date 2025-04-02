@@ -1,5 +1,7 @@
 {
+  "$schema": "https://becomtweaks.github.io/schema/packs.json",
   "topic": "More Blocks",
+  "location": "more_blocks",
   "packs": [
     {
       "pack_id": "MoreTrapdoors",
