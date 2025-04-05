@@ -6,7 +6,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/BEComTweaks/crafting-tweaks?style=for-the-badge&label=Size&color=pink)
 <br>
 ![Completed Packs](https://img.shields.io/badge/Packs-26%2F26-blue?style=for-the-badge&color=blue)
-![Completed Compatibilities for Packs](https://img.shields.io/badge/Compatibilities-2%2F2-cyan?style=for-the-badge&color=cyan)
+![Completed Compatibilities for Packs](https://img.shields.io/badge/Compatibilities-0%2F2-cyan?style=for-the-badge&color=cyan)
 ![Completed Pack Icons](https://img.shields.io/badge/Pack%20Icons-26%2F26-green?style=for-the-badge&color=green)
 
 </div>
