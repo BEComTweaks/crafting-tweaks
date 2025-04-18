@@ -1,5 +1,7 @@
 {
+  "$schema": "https://becomtweaks.github.io/schema/packs.json",
   "topic": "Quality of Life",
+  "location": "quality_of_life",
   "packs": [
     {
       "pack_id": "BacktoBlocks",
