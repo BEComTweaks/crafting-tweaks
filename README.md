@@ -10,25 +10,8 @@
 ![Completed Pack Icons](https://img.shields.io/badge/Pack%20Icons-26%2F26-green?style=for-the-badge&color=green)
 
 </div>
-
-> [!IMPORTANT]
-> As of 2/7/24, BedrockTweaks/Files will be more favoured compared to BEComTweaks.
->
-> Contributions here will also be directed to BedrockTweaks/Files.
-
 <div align="left">
-A repo containing every single tweak **possible** ported from <a href="https://vanillatweaks.net/picker/crafting-tweaks">Vanilla Tweaks' Crafting Tweaks</a> with a Command Line and Web Interface.
-
-How to clone:
-
-```bash
-git clone https://github.com/BEComTweaks/crafting-tweaks/
-cd crafting-tweaks/pys
-echo 0 | python3 folder_creator.py
-```
-
-<sub>echo is to instantly start the script with no printing.</sub>
+A repo containing every single tweak <b>possible</b> ported from <a href="https://vanillatweaks.net/picker/crafting-tweaks">Vanilla Tweaks' Crafting Tweaks</a> with a Web Interface.
 
 Pull Requests are greatly appreciated as I do not want this to be a single person project. I can get pretty drained out from projects.
-
 </div>

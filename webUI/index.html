@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta content="Bedrock Edition Community Tweaks Crafting Tweaks" name="author"/>
-  <meta content="Crafting Tweak Pack selector. Unofficially updated by BEComTweaks on GitHub" name="description"/>
+  <meta content="A Crafting Tweak selector for Minecraft: Bedrock Edition. Unofficially updated by BEComTweaks on GitHub" name="description"/>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
@@ -23,7 +23,7 @@
     </a>
    </li>
    <li>
-    <a class="nav-link" href="https://becomtweaks.github.io/docs">
+    <a class="nav-link" href="https://becomtweaks.gitbook.io/docs">
      Docs
     </a>
    </li>
@@ -32,17 +32,17 @@
      Discord
     </a>
    </li>
-   <li style="float:right">
+   <li style="float: right">
     <a class="nav-link" href="https://becomtweaks.github.io/crafting-tweaks">
      Crafting Tweaks
     </a>
    </li>
-   <li style="float:right">
+   <li style="float: right">
     <a class="nav-link" href="https://becomtweaks.github.io/behaviour-packs">
      Behaviour Packs
     </a>
    </li>
-   <li style="float:right">
+   <li style="float: right">
     <a class="nav-link" href="https://becomtweaks.github.io/resource-packs">
      Resource Packs
     </a>
@@ -54,38 +54,106 @@
      Home
     </a>
    </li>
-   <li style="float:right">
+   <li style="float: right">
     <a class="nav-link" href="https://becomtweaks.github.io/crafting-tweaks">
      CTs
     </a>
    </li>
-   <li style="float:right">
+   <li style="float: right">
     <a class="nav-link" href="https://becomtweaks.github.io/behaviour-packs">
      BPs
     </a>
    </li>
-   <li style="float:right">
+   <li style="float: right">
     <a class="nav-link" href="https://becomtweaks.github.io/resource-packs">
      RPs
     </a>
    </li>
   </ul>
+  <!--The full screen elements-->
   <div id="background-container">
   </div>
-  <script src="bg.js">
-  </script>
   <div class="half-dark">
   </div>
-  <br>
-  <br>
-  <div class="image-container">
-   <img alt="Crafting Tweaks" id="title" src="images/title.png"/>
+  <div class="loading-screen">
+   <div class="loader">
+    <div class="box1">
+    </div>
+    <div class="box2">
+    </div>
+    <div class="box3">
+    </div>
+   </div>
+   <p class="loading-status">
+   </p>
+  </div>
+  <div class="devtools" oreui-color="dark" oreui-type="general">
+   <h3>
+    Devtools
+   </h3>
+   <div class="devtools-toggle-console">
+    <label class="switch">
+     <input type="checkbox"/>
+     <span class="slider">
+     </span>
+    </label>
+    <p>
+     Enable Console
+    </p>
+   </div>
+   <code class="devtools-console" oreui-color="dark">
+    <h3>
+     Console
+    </h3>
+    <div class="devtools-console-content">
+    </div>
+   </code>
+   <div class="devtools-toggle-tweak-per-column">
+    <label class="switch">
+     <input type="checkbox"/>
+     <span class="slider">
+     </span>
+    </label>
+    <div>
+     <p>
+      Use a custom width for each column
+     </p>
+     <input disabled="" oreui-color="dark" oreui-type="input" placeholder="Enter a number" type="number"/>
+    </div>
+   </div>
+   <div class="devtools-toggle-save-to-cache">
+    <label class="switch">
+     <input disabled="" type="checkbox"/>
+     <span class="slider">
+     </span>
+    </label>
+    <p>
+     Save settings to the browser cache
+    </p>
+   </div>
+   <div class="devtools-toggle-mine-then-craft">
+    <label class="switch">
+     <input disabled="" type="checkbox"/>
+     <span class="slider">
+     </span>
+    </label>
+    <p>
+     Mine then craft
+    </p>
+   </div>
   </div>
   <div class="preselected" oreui-color="dark" oreui-type="general">
    Pre-selected Tweaks!
    <div class="preselected-unselect" onclick="processJsonData(getSelectedTweaks(),'unselect'); this.parentElement.style.top = '-20vh'; this.parentElement.innerText = 'Unselected!';">
     Unselect?
    </div>
+  </div>
+  <div class="capture-exit" onclick="closePanel();">
+  </div>
+  <script src="extra.js">
+  </script>
+  <div class="image-container" onclick="showDevToolsPanel();">
+   <img alt="Resource Packs" id="title" src="images/title.png"/>
   </div>
   <div class="container">
    <div class="search-container">
@@ -94,10 +162,10 @@
     </div>
    </div>
    <div class="category">
-    <div class="category-label" onclick="OreUI.toggleActive(this);toggleCategory(this);" oreui-color="dark" oreui-type="button">
+    <div class="category-label" onclick="toggleCategory(this);" oreui-color="dark" oreui-type="button">
      Quality of Life
     </div>
-    <button class="category-label-selectall" data-allpacks="N4IgTghg7iBcDaIBCEDGBrALgeyQG2wwGcQAaEAEWwFcAjPAUwGU8JaTyKxsAHHhsDgoBLIvwB2RAWRAAlbJkwNxAMUZEAFjgAyDCJg3TyAYQ0QwqbBDw58adBQCeDGcas3crDE5fkmEcQATIhxxBh9hcQBzGQBVcWEANwEiawjomSZMSGEorRwmM351DmQvdBDsMLdaegZKsJkABWwoQIEcAHFWIhIAXQBfIA" onclick="selectAll(this)">
+    <button class="category-label-selectall" data-allpacks="N4IgTghg7iBcAEBtEAhCBjA1gFwPYoBtcsBnEAGnhABFcBXAIwIFMBlAiBsymsXAB37MweagEsSQgHYlhFKgCVc2bMykAxFiQAWeADLMI2bXJ4BhbRDDpcEAnkIZM1AJ7N5IM7fv4OWV+48rBBSACYkeFLMAWJSAOYeAKpSYgBuwiR2MfEerNiQYnG6eKyWQlrcVI6kkcxeDEzMEbhRHgAKuFChwngA4hwkZAC6AL5AA" data-category="Quality of Life" onclick="selectAll(this)">
      <img class="category-label-selectall-img" src="images/select-all-button/chiseled_bookshelf_empty.png"/>
      <div class="category-label-selectall-hovertext">
       Select All
@@ -105,10 +173,10 @@
     </button>
     <div class="category-controlled" oreui-color="dark" oreui-type="general">
      <div class="tweaks">
-      <div class="tweak" data-category="Quality of Life" data-index="0" data-name="BacktoBlocks" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Quality of Life" data-conflicts="[]" data-name="BacktoBlocks" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
-        <img alt="Back to Blocks" src="../packs/quality of life/BacktoBlocks/pack_icon.png" style="width:82px; height:82px;"/>
+        <img alt="Back to Blocks" src="../packs/quality_of_life/BacktoBlocks/pack_icon.png" style="width:82px; height:82px;"/>
         <br>
         <label class="tweak-title" id="tweak">
          Back to Blocks
@@ -118,10 +186,10 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="Quality of Life" data-index="1" data-name="DoubleSlabs" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Quality of Life" data-conflicts="[]" data-name="DoubleSlabs" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
-        <img alt="Double Slabs" src="../packs/quality of life/DoubleSlabs/pack_icon.png" style="width:82px; height:82px;"/>
+        <img alt="Double Slabs" src="../packs/quality_of_life/DoubleSlabs/pack_icon.png" style="width:82px; height:82px;"/>
         <br>
         <label class="tweak-title" id="tweak">
          Double Slabs
@@ -131,10 +199,10 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="Quality of Life" data-index="2" data-name="DroppertoDispenser" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Quality of Life" data-conflicts="[]" data-name="DroppertoDispenser" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
-        <img alt="Dropper to Dispenser" src="../packs/quality of life/DroppertoDispenser/pack_icon.png" style="width:82px; height:82px;"/>
+        <img alt="Dropper to Dispenser" src="../packs/quality_of_life/DroppertoDispenser/pack_icon.png" style="width:82px; height:82px;"/>
         <br>
         <label class="tweak-title" id="tweak">
          Dropper to Dispenser
@@ -144,10 +212,10 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="Quality of Life" data-index="3" data-name="RottenFleshtoLeather" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Quality of Life" data-conflicts="[]" data-name="RottenFleshtoLeather" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
-        <img alt="Rotten Flesh to Leather" src="../packs/quality of life/RottenFleshtoLeather/pack_icon.png" style="width:82px; height:82px;"/>
+        <img alt="Rotten Flesh to Leather" src="../packs/quality_of_life/RottenFleshtoLeather/pack_icon.png" style="width:82px; height:82px;"/>
         <br>
         <label class="tweak-title" id="tweak">
          Rotten Flesh to Leather
@@ -157,10 +225,10 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="Quality of Life" data-index="4" data-name="CharcoaltoBlackDye" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Quality of Life" data-conflicts="[]" data-name="CharcoaltoBlackDye" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
-        <img alt="Charcoal to Black Dye" src="../packs/quality of life/CharcoaltoBlackDye/pack_icon.png" style="width:82px; height:82px;"/>
+        <img alt="Charcoal to Black Dye" src="../packs/quality_of_life/CharcoaltoBlackDye/pack_icon.png" style="width:82px; height:82px;"/>
         <br>
         <label class="tweak-title" id="tweak">
          Charcoal to Black Dye
@@ -170,10 +238,10 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="Quality of Life" data-index="5" data-name="CoaltoBlackDye" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Quality of Life" data-conflicts="[]" data-name="CoaltoBlackDye" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
-        <img alt="Coal to Black Dye" src="../packs/quality of life/CoaltoBlackDye/pack_icon.png" style="width:82px; height:82px;"/>
+        <img alt="Coal to Black Dye" src="../packs/quality_of_life/CoaltoBlackDye/pack_icon.png" style="width:82px; height:82px;"/>
         <br>
         <label class="tweak-title" id="tweak">
          Coal to Black Dye
@@ -183,10 +251,10 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="Quality of Life" data-index="6" data-name="SandstoneDyeing" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Quality of Life" data-conflicts="[]" data-name="SandstoneDyeing" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
-        <img alt="Sandstone Dyeing" src="../packs/quality of life/SandstoneDyeing/pack_icon.png" style="width:82px; height:82px;"/>
+        <img alt="Sandstone Dyeing" src="../packs/quality_of_life/SandstoneDyeing/pack_icon.png" style="width:82px; height:82px;"/>
         <br>
         <label class="tweak-title" id="tweak">
          Sandstone Dyeing
@@ -196,10 +264,10 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="Quality of Life" data-index="7" data-name="UniversalDyeing" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Quality of Life" data-conflicts="[]" data-name="UniversalDyeing" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
-        <img alt="Universal Dyeing" src="../packs/quality of life/UniversalDyeing/pack_icon.png" style="width:82px; height:82px;"/>
+        <img alt="Universal Dyeing" src="../packs/quality_of_life/UniversalDyeing/pack_icon.png" style="width:82px; height:82px;"/>
         <br>
         <label class="tweak-title" id="tweak">
          Universal Dyeing
@@ -209,10 +277,10 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="Quality of Life" data-index="8" data-name="StraighttoShapeless" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Quality of Life" data-conflicts="[]" data-name="StraighttoShapeless" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
-        <img alt="Straight to Shapeless" src="../packs/quality of life/StraighttoShapeless/pack_icon.png" style="width:82px; height:82px;"/>
+        <img alt="Straight to Shapeless" src="../packs/quality_of_life/StraighttoShapeless/pack_icon.png" style="width:82px; height:82px;"/>
         <br>
         <label class="tweak-title" id="tweak">
          Straight to Shapeless
@@ -222,10 +290,10 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="Quality of Life" data-index="9" data-name="BlackstoneCobblestone" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Quality of Life" data-conflicts="[]" data-name="BlackstoneCobblestone" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
-        <img alt="Blackstone Cobblestone" src="../packs/quality of life/BlackstoneCobblestone/pack_icon.png" style="width:82px; height:82px;"/>
+        <img alt="Blackstone Cobblestone" src="../packs/quality_of_life/BlackstoneCobblestone/pack_icon.png" style="width:82px; height:82px;"/>
         <br>
         <label class="tweak-title" id="tweak">
          Blackstone Cobblestone
@@ -235,10 +303,10 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="Quality of Life" data-index="10" data-name="PowdertoGlass" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Quality of Life" data-conflicts="[]" data-name="PowdertoGlass" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
-        <img alt="Powder to Glass" src="../packs/quality of life/PowdertoGlass/pack_icon.png" style="width:82px; height:82px;"/>
+        <img alt="Powder to Glass" src="../packs/quality_of_life/PowdertoGlass/pack_icon.png" style="width:82px; height:82px;"/>
         <br>
         <label class="tweak-title" id="tweak">
          Powder to Glass
@@ -252,10 +320,10 @@
     </div>
    </div>
    <div class="category">
-    <div class="category-label" onclick="OreUI.toggleActive(this);toggleCategory(this);" oreui-color="dark" oreui-type="button">
+    <div class="category-label" onclick="toggleCategory(this);" oreui-color="dark" oreui-type="button">
      More Blocks
     </div>
-    <button class="category-label-selectall" data-allpacks="N4IgTghg7iBcDaICyB7MBTAKpADgExTQGcQAaZNdAIQjAGsyKMBlAFwgEswTzUMqwHAMZ0SAXQC+QA" onclick="selectAll(this)">
+    <button class="category-label-selectall" data-allpacks="N4IgTghg7iBcAEBtEBZA9mApgFUgBwBM0MBnEAGnlQ0wCEIwBrCq9LAZQBcIBLMMytSy0wPAMaMyAXQC+QA" data-category="More Blocks" onclick="selectAll(this)">
      <img class="category-label-selectall-img" src="images/select-all-button/chiseled_bookshelf_empty.png"/>
      <div class="category-label-selectall-hovertext">
       Select All
@@ -263,10 +331,10 @@
     </button>
     <div class="category-controlled" oreui-color="dark" oreui-type="general">
      <div class="tweaks">
-      <div class="tweak" data-category="More Blocks" data-index="0" data-name="MoreTrapdoors" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="More Blocks" data-conflicts="[]" data-name="MoreTrapdoors" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
-        <img alt="More Trapdoors" src="../packs/more blocks/MoreTrapdoors/pack_icon.png" style="width:82px; height:82px;"/>
+        <img alt="More Trapdoors" src="../packs/more_blocks/MoreTrapdoors/pack_icon.png" style="width:82px; height:82px;"/>
         <br>
         <label class="tweak-title" id="tweak">
          More Trapdoors
@@ -276,10 +344,10 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="More Blocks" data-index="1" data-name="MoreBark" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="More Blocks" data-conflicts="[]" data-name="MoreBark" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
-        <img alt="More Bark" src="../packs/more blocks/MoreBark/pack_icon.png" style="width:82px; height:82px;"/>
+        <img alt="More Bark" src="../packs/more_blocks/MoreBark/pack_icon.png" style="width:82px; height:82px;"/>
         <br>
         <label class="tweak-title" id="tweak">
          More Bark
@@ -289,10 +357,10 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="More Blocks" data-index="2" data-name="MoreStairs" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="More Blocks" data-conflicts="[]" data-name="MoreStairs" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
-        <img alt="More Stairs" src="../packs/more blocks/MoreStairs/pack_icon.png" style="width:82px; height:82px;"/>
+        <img alt="More Stairs" src="../packs/more_blocks/MoreStairs/pack_icon.png" style="width:82px; height:82px;"/>
         <br>
         <label class="tweak-title" id="tweak">
          More Stairs
@@ -302,10 +370,10 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="More Blocks" data-index="3" data-name="MoreBricks" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="More Blocks" data-conflicts="[]" data-name="MoreBricks" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
-        <img alt="More Bricks" src="../packs/more blocks/MoreBricks/pack_icon.png" style="width:82px; height:82px;"/>
+        <img alt="More Bricks" src="../packs/more_blocks/MoreBricks/pack_icon.png" style="width:82px; height:82px;"/>
         <br>
         <label class="tweak-title" id="tweak">
          More Bricks
@@ -319,10 +387,10 @@
     </div>
    </div>
    <div class="category">
-    <div class="category-label" onclick="OreUI.toggleActive(this);toggleCategory(this);" oreui-color="dark" oreui-type="button">
+    <div class="category-label" onclick="toggleCategory(this);" oreui-color="dark" oreui-type="button">
      Craftables
     </div>
-    <button class="category-label-selectall" data-allpacks="N4IgTghg7iBcDaIDCkBmAXCAjANgUwHFIA3PHEAGmTU1zwAkB7MAZzwEEwBbZy6iDNnxJmEHACEcjAMYBrFgCYAHgr4oBtYaIlS5LAMxL9amkLwBRAHbSAFhEvo8AEwKMcTvJfYAHb-hYmGmYAchBceAAqEADmAVTqgnSSEHrojJZ4IAC6AL5AA" onclick="selectAll(this)">
+    <button class="category-label-selectall" data-allpacks="N4IgTghg7iBcAEBtEBhSAzALhARgGwFMBxSANwLxABp5UNt8CAJAezAGcCBBMAWzeq00ELLkIo2EPACE8LAMYBrdgCYAHisF0RDcZJlyl7AMxrjW4aMYBRAHbyAFhFuYCAEyIs8bgra4AHf0J2C3oxAgA5CF4CABUIAHMQmm0rQlkII0wWWwIQAF0AXyA" data-category="Craftables" onclick="selectAll(this)">
      <img class="category-label-selectall-img" src="images/select-all-button/chiseled_bookshelf_empty.png"/>
      <div class="category-label-selectall-hovertext">
       Select All
@@ -330,7 +398,7 @@
     </button>
     <div class="category-controlled" oreui-color="dark" oreui-type="general">
      <div class="tweaks">
-      <div class="tweak" data-category="Craftables" data-index="0" data-name="CraftableGravel" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Craftables" data-conflicts="[]" data-name="CraftableGravel" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
         <img alt="Craftable Gravel" src="../packs/craftables/CraftableGravel/pack_icon.png" style="width:82px; height:82px;"/>
@@ -343,7 +411,7 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="Craftables" data-index="1" data-name="CraftableHorseArmor" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Craftables" data-conflicts="[]" data-name="CraftableHorseArmor" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
         <img alt="Craftable Horse Armor" src="../packs/craftables/CraftableHorseArmor/pack_icon.png" style="width:82px; height:82px;"/>
@@ -356,7 +424,7 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="Craftables" data-index="2" data-name="CraftableCoralBlocks2x2" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Craftables" data-conflicts="[]" data-name="CraftableCoralBlocks2x2" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
         <img alt="Craftable Coral Blocks 2x2" src="../packs/craftables/CraftableCoralBlocks2x2/pack_icon.png" style="width:82px; height:82px;"/>
@@ -369,7 +437,7 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="Craftables" data-index="3" data-name="CraftableCoralBlocks3x3" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Craftables" data-conflicts="[]" data-name="CraftableCoralBlocks3x3" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
         <img alt="Craftable Coral Blocks 3x3" src="../packs/craftables/CraftableCoralBlocks3x3/pack_icon.png" style="width:82px; height:82px;"/>
@@ -382,7 +450,7 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="Craftables" data-index="4" data-name="CraftableEnchantedGoldenApples" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Craftables" data-conflicts="[]" data-name="CraftableEnchantedGoldenApples" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
         <img alt="Craftable Enchanted Golden Apples" src="../packs/craftables/CraftableEnchantedGoldenApples/pack_icon.png" style="width:82px; height:82px;"/>
@@ -395,7 +463,7 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="Craftables" data-index="5" data-name="CraftableNameTags" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Craftables" data-conflicts="[]" data-name="CraftableNameTags" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
         <img alt="Craftable Name Tags" src="../packs/craftables/CraftableNameTags/pack_icon.png" style="width:82px; height:82px;"/>
@@ -408,7 +476,7 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="Craftables" data-index="6" data-name="CraftableBlackstone" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Craftables" data-conflicts="[]" data-name="CraftableBlackstone" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
         <img alt="Craftable Blackstone" src="../packs/craftables/CraftableBlackstone/pack_icon.png" style="width:82px; height:82px;"/>
@@ -425,10 +493,10 @@
     </div>
    </div>
    <div class="category">
-    <div class="category-label" onclick="OreUI.toggleActive(this);toggleCategory(this);" oreui-color="dark" oreui-type="button">
+    <div class="category-label" onclick="toggleCategory(this);" oreui-color="dark" oreui-type="button">
      Unpackables
     </div>
-    <button class="category-label-selectall" data-allpacks="N4IgTghg7iBcDaICqA7ADhAxgawgIwBsBTASUyJABpl0tdCiA5IgFwAsiwB1CMFqmhhz5iXAPZiCA1EPrEAshADmAWwggAugF8gA" onclick="selectAll(this)">
+    <button class="category-label-selectall" data-allpacks="N4IgTghg7iBcAEBtEBVAdgBwgYwNYQCMAbAUwElsSQAaeVTHfYkgORIBcALEsAdQjDsaddFjyFSvAPZSiw+mKakAshADmAWwggAugF8gA" data-category="Unpackables" onclick="selectAll(this)">
      <img class="category-label-selectall-img" src="images/select-all-button/chiseled_bookshelf_empty.png"/>
      <div class="category-label-selectall-hovertext">
       Select All
@@ -436,7 +504,7 @@
     </button>
     <div class="category-controlled" oreui-color="dark" oreui-type="general">
      <div class="tweaks">
-      <div class="tweak" data-category="Unpackables" data-index="0" data-name="UnpackableIce" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Unpackables" data-conflicts="[]" data-name="UnpackableIce" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
         <img alt="Unpackable Ice" src="../packs/unpackables/UnpackableIce/pack_icon.png" style="width:82px; height:82px;"/>
@@ -449,7 +517,7 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="Unpackables" data-index="1" data-name="UnpackableNetherWart" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Unpackables" data-conflicts="[]" data-name="UnpackableNetherWart" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
         <img alt="Unpackable Nether Wart" src="../packs/unpackables/UnpackableNetherWart/pack_icon.png" style="width:82px; height:82px;"/>
@@ -462,7 +530,7 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="Unpackables" data-index="2" data-name="UnpackableWool" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Unpackables" data-conflicts="[]" data-name="UnpackableWool" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
         <img alt="Unpackable Wool" src="../packs/unpackables/UnpackableWool/pack_icon.png" style="width:82px; height:82px;"/>
@@ -475,7 +543,7 @@
         </div>
        </div>
       </div>
-      <div class="tweak" data-category="Unpackables" data-index="3" data-name="UnpackableMagma" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
+      <div class="tweak" data-category="Unpackables" data-conflicts="[]" data-name="UnpackableMagma" onclick="toggleSelection(this);" oreui-active-color="green" oreui-color="dark" oreui-type="button">
        <div class="tweak-info">
         <input name="tweak" type="checkbox"/>
         <img alt="Unpackable Magma" src="../packs/unpackables/UnpackableMagma/pack_icon.png" style="width:82px; height:82px;"/>
@@ -493,9 +561,7 @@
    </div>
   </div>
   <div class="download-container">
-   <div class="file-download">
-    <input id="fileNameInput" oreui-color="dark" oreui-type="input" placeholder="Enter Pack name" type="text"/>
-    <br>
+   <input id="fileNameInput" oreui-color="dark" oreui-type="input" placeholder="Enter Pack name" type="text">
     <select id="mev" name="mev" oreui-color="dark" oreui-type="general">
      <option value="1.21.40">
       1.21.40
@@ -519,72 +585,72 @@
       1.16
      </option>
     </select>
-   </div>
-   <div class="zipinputcontainer" oreui-color="purple" oreui-type="button">
-    <input id="zipInput" type="file">
-     <span class="selectedFile">
-      Upload Pack
-     </span>
-    </input>
-   </div>
-   <button class="download-selected-button" disabled="" onclick="downloadSelectedTweaks()" oreui-color="dark" oreui-type="button">
-    Download Selected Tweaks
-   </button>
-   <div id="selected-tweaks" oreui-color="dark" oreui-type="general">
-    <div class="tweak-list-pack">
-     Select some packs and see them appear here!
+    <div class="zipinputcontainer" oreui-color="purple" oreui-type="button">
+     <input id="zipInput" type="file">
+      <span class="selectedFile">
+       Upload Pack
+      </span>
+     </input>
     </div>
-   </div>
+    <button class="download-selected-button" disabled="" onclick="downloadSelectedTweaks()" oreui-color="dark" oreui-type="button">
+     Download
+    </button>
+    <div id="selected-tweaks" oreui-color="dark" oreui-type="general">
+     <div class="tweak-list-pack" no-pack="">
+      Select some packs and see them appear here!
+     </div>
+    </div>
+   </input>
   </div>
   <script src="app.js">
   </script>
+  <footer class="footer-container">
+   <div class="credits-footer" oreui-color="dark" oreui-type="general">
+    <h2>
+     This would not have been possible if not for the following
+    </h2>
+    <h3>
+     Websites
+    </h3>
+    <p>
+     <a href="https://vanillatweaks.net">
+      Vanilla Tweaks
+     </a>
+     - Without them, Bedrock Tweaks would have not been this way
+    </p>
+    <p>
+     <a href="https://bedrocktweaks.net">
+      Bedrock Tweaks
+     </a>
+     - Without DrAV, this would have taken a long time to complete
+    </p>
+    <h3>
+     Individuals
+    </h3>
+    <p>
+     <a href="https://github.com/yzabeast1">
+      YzaBeast1
+     </a>
+     - Pointed out issues with my code preventing Linux Distributions from running the scripts, and took the jump to make a webUI and backend
+    </p>
+    <p>
+     <a href="https://github.com/NSPC911">
+      NSPC911
+     </a>
+     - Yep, that's me, the one who started this all!
+    </p>
+    <p>
+     If you contributed directly or indirectly and want a place here, contact me on Discord at
+     <code>
+      @nspg911
+     </code>
+    </p>
+    <p>
+     <a href="https://github.com/BEComTweaks/crafting-tweaks">
+      GitHub
+     </a>
+    </p>
+   </div>
+  </footer>
  </body>
- <footer class="footer-container">
-  <div class="credits-footer" oreui-color="dark" oreui-type="general">
-   <h2>
-    This would not have been possible if not for the following
-   </h2>
-   <h3>
-    Websites
-   </h3>
-   <p>
-    <a href="https://vanillatweaks.net">
-     Vanilla Tweaks
-    </a>
-    - Without them, Bedrock Tweaks would have not been this way
-   </p>
-   <p>
-    <a href="https://bedrocktweaks.net">
-     Bedrock Tweaks
-    </a>
-    - Without DrAV, this would have taken a long time to complete
-   </p>
-   <h3>
-    Individuals
-   </h3>
-   <p>
-    <a href="https://github.com/yzabeast1">
-     YzaBeast1
-    </a>
-    - Pointed out issues with my code preventing Linux Distributions from running the scripts, and took the jump to make a webUI and backend
-   </p>
-   <p>
-    <a href="https://github.com/NSPC911">
-     NSPC911
-    </a>
-    - Yep, that's me, the one who started this all!
-   </p>
-   <p>
-    If you contributed directly or indirectly and want a place here, contact me on Discord at
-    <code>
-     @nspg911
-    </code>
-   </p>
-   <p>
-    <a href="https://github.com/BEComTweaks/crafting-tweaks">
-     GitHub
-    </a>
-   </p>
-  </div>
- </footer>
 </html>
