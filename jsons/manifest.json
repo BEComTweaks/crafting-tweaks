@@ -17,6 +17,7 @@
   ],
   "metadata": {
     "authors": ["BEComTweaks"],
-    "url": "https://github.com/BEComTweaks/crafting-tweaks"
+    "url": "https://github.com/BEComTweaks/crafting-tweaks",
+    "product_type": "addon"
   }
 }
